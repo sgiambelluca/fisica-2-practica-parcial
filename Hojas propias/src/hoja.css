@@ -1,0 +1,53 @@
+@page { size: A4; margin: 0; }
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #111;
+  -webkit-print-color-adjust: exact; print-color-adjust: exact;
+}
+.page {
+  width: 210mm; height: 297mm;
+  padding: var(--pad, 5mm 5mm 4mm);
+  overflow: hidden;
+  page-break-after: always; break-after: page;
+  font-size: var(--fs, 7.1pt);
+  line-height: var(--lh, 1.22);
+  column-count: var(--cols, 3);
+  column-gap: 3.2mm;
+  column-fill: auto;
+  column-rule: 0.3pt solid #bbb;
+}
+.page:last-child { page-break-after: auto; break-after: auto; }
+
+.sec { break-inside: auto; margin: 0 0 1.4mm; }
+.sec > h2 {
+  font-size: 1.12em; margin: 0 0 0.6mm; padding: 0.3mm 1mm;
+  background: var(--c, #1f4e8c); color: #fff; border-radius: 1mm;
+  break-after: avoid;
+}
+h3 { font-size: 1em; margin: 0.9mm 0 0.2mm; color: var(--c, #1f4e8c); break-after: avoid; }
+p { margin: 0 0 0.45mm; }
+ul { margin: 0 0 0.5mm; padding-left: 3mm; }
+li { margin: 0 0 0.25mm; }
+.box { border: 0.5pt solid var(--c, #1f4e8c); border-radius: 1mm; padding: 0.5mm 1mm; margin: 0.4mm 0 0.8mm; break-inside: avoid; }
+.ojo { color: #b3261e; }
+.ojo::before { content: "⚠ "; }
+.chico { font-size: 0.9em; }
+.res { font-weight: bold; color: var(--c, #1f4e8c); }
+table { border-collapse: collapse; font-size: 0.95em; margin: 0.3mm 0 0.6mm; }
+td, th { border: 0.3pt solid #999; padding: 0.2mm 0.8mm; vertical-align: middle; }
+.katex { font-size: 1.08em; }
+.katex-display { margin: 0.4mm 0; }
+.osc { --c: #1f4e8c; } .ond { --c: #2e7d32; } .geo { --c: #8e44ad; } .fis { --c: #c0392b; } .red { --c: #d35400; } .ext { --c: #444; }
+
+/* Ejercicios resueltos */
+.ej { break-inside: auto; margin: 0 0 var(--sep, 1.4mm); }
+.ej > h2 { font-size: 1.08em; margin: 0 0 0.5mm; padding: 0.3mm 1mm; background: var(--c); color: #fff; border-radius: 1mm; break-after: avoid; }
+.desc { border-left: 0.8pt solid var(--c); padding-left: 1mm; margin: 0 0 0.4mm; color: #222; }
+.enun { font-style: italic; color: #333; }
+.paso { margin: 0 0 0.35mm; }
+.paso b { color: var(--c); }
+
+/* Plantilla para calcar */
+body.calco .page { opacity: 0.3; }

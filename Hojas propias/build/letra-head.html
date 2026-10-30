@@ -1,0 +1,78 @@
+<style>
+@font-face { font-family: 'HW-1'; src: url('fuente/HW-1.otf'); }
+@font-face { font-family: 'HW-2'; src: url('fuente/HW-2.otf'); }
+@font-face { font-family: 'HW-3'; src: url('fuente/HW-3.otf'); }
+@font-face { font-family: 'HW-4'; src: url('fuente/HW-4.otf'); }
+@font-face { font-family: 'HW-5'; src: url('fuente/HW-5.otf'); }
+@font-face { font-family: 'HW-6'; src: url('fuente/HW-6.otf'); }
+/* Variante "letra": títulos subrayados en lugar de recuadros llenos, como en una hoja escrita a mano */
+body.letra { color: #1b1b3a; }
+body.letra .hw { position: relative; }
+body.letra .sec > h2, body.letra .ej > h2 {
+  background: none; color: var(--c); border-radius: 0;
+  border-bottom: 0.6pt solid var(--c); padding: 0 0 0.2mm; font-weight: normal; font-size: 1.2em;
+}
+body.letra h3 { font-weight: normal; text-decoration: underline; text-decoration-thickness: 0.4pt; }
+body.letra b, body.letra .res { font-weight: normal; }
+body.letra .res { text-decoration: underline; text-decoration-thickness: 0.4pt; text-underline-offset: 1.5pt; }
+body.letra .enun { font-style: normal; color: #444; }
+body.letra .box { border-width: 0.6pt; }
+body.letra .page { column-rule-color: #ccc; }
+
+</style>
+<script>window.HW_CHARS = "!\"%'()+,-./0123456789:;<=>?ABCDEFGHIJKLMNOPQRSTUVWXYZ[]abcdefghijklmnopqrstuvwxyz{|}¨ª°±²³µ·¹º¿ÁÉÓ×áéíñóú˙ΔΣΦΩαβγδεθλμπτφωϕ–—‘’“”…′⁻ℓ→↔⇒⇔∂∈−∓∞∣∫≈≠≡≤≥≫⋅⋯✓✗⟨⟩"; window.HW_CARAS = 6; window.HW_SEMILLA = 1;</script>
+<script>// Variante "letra": cada carácter pasa a una de las caras HW-1..N elegida al azar,
+// con un corrimiento vertical y un tamaño levemente distintos. Después achica la letra
+// de cada hoja hasta que entre en una sola página (tools/ajustar.js).
+(function () {
+  let s = window.HW_SEMILLA || 1;
+  const rnd = () => { s = (s * 1664525 + 1013904223) % 4294967296; return s / 4294967296; };
+  const caras = window.HW_CARAS;
+  const hay = new Set(window.HW_CHARS);
+  // Delimitadores grandes de KaTeX (\left( ... \right)): agrandamos el glifo manuscrito
+  const TAM = { size1: 1.15, size2: 1.65, size3: 2.15, size4: 2.65 };
+
+  function tamDelim(el) {
+    for (let p = el; p && p !== document.body; p = p.parentElement) {
+      for (const c of p.classList || []) if (TAM[c]) return TAM[c];
+    }
+    return 0;
+  }
+
+  function procesar(nodo) {
+    const padre = nodo.parentElement;
+    const fam = getComputedStyle(padre).fontFamily;
+    const delim = fam.includes("KaTeX_Size") ? tamDelim(padre) || 1.15 : 0;
+    // las minúsculas manuscritas son más chicas que las de KaTeX: achicamos índices y exponentes
+    const indice = padre.closest(".msupsub") ? 82 : 100;
+    const frag = document.createDocumentFragment();
+    for (const ch of nodo.textContent) {
+      if (!hay.has(ch)) { frag.append(ch); continue; }
+      const sp = document.createElement("span");
+      sp.className = "hw";
+      sp.textContent = ch;
+      sp.style.fontFamily = `"HW-${1 + Math.floor(rnd() * caras)}", ${fam}`;
+      if (delim) {
+        sp.style.fontSize = `${delim * 100}%`;
+        sp.style.top = `${(delim - 1) * 0.32}em`;
+      } else {
+        sp.style.top = `${((rnd() - 0.5) * 0.07).toFixed(3)}em`;
+        sp.style.fontSize = `${(indice + (rnd() - 0.5) * 6).toFixed(1)}%`;
+      }
+      frag.append(sp);
+    }
+    nodo.replaceWith(frag);
+  }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const w = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, {
+      acceptNode: (n) => n.parentElement.closest(".katex-mathml, style, script") || !n.textContent.trim()
+        ? NodeFilter.FILTER_REJECT : NodeFilter.FILTER_ACCEPT,
+    });
+    const nodos = [];
+    while (w.nextNode()) nodos.push(w.currentNode);
+    nodos.forEach(procesar);
+    document.fonts.ready.then(window.ajustarPaginas);
+  });
+})();
+</script>

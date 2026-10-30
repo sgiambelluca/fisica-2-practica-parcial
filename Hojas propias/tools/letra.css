@@ -1,0 +1,13 @@
+/* Variante "letra": títulos subrayados en lugar de recuadros llenos, como en una hoja escrita a mano */
+body.letra { color: #1b1b3a; }
+body.letra .hw { position: relative; }
+body.letra .sec > h2, body.letra .ej > h2 {
+  background: none; color: var(--c); border-radius: 0;
+  border-bottom: 0.6pt solid var(--c); padding: 0 0 0.2mm; font-weight: normal; font-size: 1.2em;
+}
+body.letra h3 { font-weight: normal; text-decoration: underline; text-decoration-thickness: 0.4pt; }
+body.letra b, body.letra .res { font-weight: normal; }
+body.letra .res { text-decoration: underline; text-decoration-thickness: 0.4pt; text-underline-offset: 1.5pt; }
+body.letra .enun { font-style: normal; color: #444; }
+body.letra .box { border-width: 0.6pt; }
+body.letra .page { column-rule-color: #ccc; }

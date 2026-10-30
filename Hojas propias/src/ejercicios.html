@@ -1,0 +1,176 @@
+<div class="page" data-flujo style="--cols:2;--fs:7.3pt;--pad:3.5mm;--lh:1.15;--sep:1mm">
+
+<div class="ej osc"><h2>1 · Amortiguado: se despega una masa (Recu 7/6/25)</h2>
+<p class="desc">Dos masas cuelgan juntas de un resorte en equilibrio. De golpe se suelta la de abajo y la que queda empieza a oscilar alrededor de un nuevo equilibrio, más arriba, perdiendo amplitud en cada ciclo (amortiguado).</p>
+<p class="enun">$m=40$ g, $M=160$ g, $k=25$ N/m, resorte de 28 cm en equilibrio; en $t=0$ se despega $m$; pierde 27% de amplitud por ciclo. a) $x(t)$; b) largo tras 1 ciclo.</p>
+<p class="paso"><b>Equilibrios.</b> Con las dos masas $k(\ell-\ell_0)=(m+M)g$ ⇒ $\ell_0=28\text{ cm}-\frac{0{,}2\cdot10}{25}\text{ m}=20$ cm. Solo con $M$: $\ell_{eq}=\ell_0+\frac{Mg}{k}=20+6{,}4=26{,}4$ cm.</p>
+<p class="paso"><b>Referencia y CI.</b> Origen en 26,4 cm, $x$ positivo hacia abajo. $x_0=28-26{,}4=+1{,}6$ cm; $v_0=0$ (estaba en reposo). $\omega_0=\sqrt{k/M}=\sqrt{25/0{,}16}=12{,}5$ s$^{-1}$.</p>
+<p class="paso"><b>Régimen.</b> Habla de ciclos ⇒ subamortiguado: $x=Ae^{-\gamma t}\cos(\omega't+\varphi_0)$. Por ciclo la amplitud se multiplica por $e^{-\gamma T'}=1-0{,}27=0{,}73$ ⇒ $\gamma T'=-\ln0{,}73=0{,}3147$.</p>
+<p class="paso">Con $T'=\frac{2\pi}{\omega'}$: $\frac{\gamma}{\omega'}=\frac{0{,}3147}{2\pi}=0{,}0501$, y $\omega'^2=\omega_0^2-\gamma^2$ ⇒ $\gamma=\frac{0{,}0501\,\omega_0}{\sqrt{1+0{,}0501^2}}=0{,}625$ s$^{-1}$; $\omega'=\sqrt{12{,}5^2-0{,}625^2}=12{,}48$ s$^{-1}$.</p>
+<p class="paso"><b>Constantes.</b> $A=\sqrt{x_0^2+\left(\frac{v_0+\gamma x_0}{\omega'}\right)^2}=\sqrt{1{,}6^2+\left(\frac{0{,}625\cdot1{,}6}{12{,}48}\right)^2}=1{,}602$ cm; $\tg\varphi_0=-\frac{v_0+\gamma x_0}{x_0\omega'}=-0{,}0501$ ⇒ $\varphi_0=-0{,}050$ rad.</p>
+<p class="res">a) $x(t)=1{,}602\,e^{-0{,}625t}\cos(12{,}48t-0{,}050)$ [cm, s], origen en 26,4 cm, + hacia abajo.</p>
+<p class="paso"><b>b)</b> En $t=T'$ el coseno vuelve a la misma fase ⇒ $x(T')=0{,}73\,x_0=1{,}17$ cm <span class="res">largo $=26{,}4+1{,}17=27{,}57$ cm</span></p>
+</div>
+
+<div class="ej osc"><h2>2 · Amortiguado: baja la frecuencia, ciclos, Q (1P 2023)</h2>
+<p class="desc">Una masa con dos resortes en serie oscila sumergida en un líquido que la frena. Con cuánto baja la frecuencia sale γ, y con eso cuánto tarda en apagarse la oscilación antes de sacarla.</p>
+<p class="enun">$m=1$ kg; resortes en serie $k_1=24$, $k_2=48$ N/m. En líquido la frecuencia baja 0,5%; se saca al perder 92% de amplitud. a) Tiempo y ciclos; b) Q; c) $A_0$ si al sacarlo $E=3$ mJ.</p>
+<p class="paso"><b>Datos.</b> Serie: $\frac1{k_{eq}}=\frac1{24}+\frac1{48}$ ⇒ $k_{eq}=16$ N/m; $\omega_0=\sqrt{16/1}=4$ s$^{-1}$. En el líquido $\omega'=0{,}995\,\omega_0=3{,}98$ s$^{-1}$.</p>
+<p class="paso">$\omega'^2=\omega_0^2-\gamma^2$ ⇒ $\gamma=\omega_0\sqrt{1-0{,}995^2}=0{,}3995$ s$^{-1}$.</p>
+<p class="paso"><b>a)</b> Queda 8%: $e^{-\gamma t}=0{,}08$ ⇒ $t=\frac{\ln(1/0{,}08)}{\gamma}=\frac{2{,}526}{0{,}3995}$ <span class="res">$=6{,}32$ s</span>; $T'=\frac{2\pi}{\omega'}=1{,}579$ s ⇒ $\frac t{T'}$ <span class="res">$=4$ ciclos</span></p>
+<p class="paso"><b>b)</b> $Q=\frac{\omega_0}{2\gamma}=\frac{4}{0{,}799}$ <span class="res">$=5$</span> &nbsp; <b>c)</b> Al sacarlo $A=0{,}08A_0$: $\frac12k(0{,}08A_0)^2=3\cdot10^{-3}$ J ⇒ <span class="res">$A_0=0{,}242$ m</span></p>
+</div>
+
+<div class="ej osc"><h2>3 · Forzado: Q, ancho de banda, estacionario (Recu 30/5/26)</h2>
+<p class="desc">Un oscilador amortiguado empujado por una fuerza periódica (forzado). Con la energía que pierde por ciclo se saca γ, y con eso la resonancia: el Q, el ancho de banda y la oscilación estacionaria.</p>
+<p class="enun">Disipa 79,28% de su energía en 2 ciclos; máx. potencia en $\omega=3$ s$^{-1}$; $F_0=9$ N, $m=10$ kg. a) Q; b) $\omega$ con $\langle P\rangle=\frac12$máx; c) $x_{est}$ de máx. potencia.</p>
+<p class="paso"><b>Planteo.</b> La potencia media es máxima en $\omega=\omega_0$ ⇒ $\omega_0=3$ s$^{-1}$. Queda 20,72% de $E$ en $2T'$: $e^{-2\gamma(2T')}=0{,}2072$ ⇒ $4\gamma T'=1{,}574$ ⇒ $\gamma T'=0{,}3935$.</p>
+<p class="paso">$\frac{\gamma}{\omega'}=\frac{0{,}3935}{2\pi}=0{,}0626$ ⇒ $\gamma=\frac{0{,}0626\,\omega_0}{\sqrt{1+0{,}0626^2}}=0{,}1875$ s$^{-1}$.</p>
+<p class="paso"><b>a)</b> $Q=\frac{\omega_0}{2\gamma}=\frac{3}{0{,}375}$ <span class="res">$=8$</span></p>
+<p class="paso"><b>b)</b> $\langle P\rangle=\frac12\langle P\rangle_{max}$ cuando $(\omega_0^2-\omega^2)^2=(2\gamma\omega)^2$ ⇒ $\omega_\pm=\sqrt{\omega_0^2+\gamma^2}\pm\gamma=3{,}006\pm0{,}1875$ <span class="res">$\omega_-=2{,}82$ s$^{-1}$, $\omega_+=3{,}19$ s$^{-1}$</span> (chequeo: $\Delta\omega=2\gamma=\frac{\omega_0}Q$)</p>
+<p class="paso"><b>c)</b> En $\omega_0$: $\delta=\frac\pi2$ y $A=\frac{F_0/m}{2\gamma\omega_0}=\frac{0{,}9}{2\cdot0{,}1875\cdot3}=0{,}8$ m <span class="res">$x(t)=0{,}8\cos(3t-\frac\pi2)$ [m, s]</span></p>
+<p class="chico">Si cesa la fuerza: $E=E_0e^{-2\gamma t}$ (cae 70% ⇒ $0{,}3=e^{-2\gamma t}$). Si dan $\omega_{RA}$ y $\omega_{RP}$: $\omega_0=\omega_{RP}$, $\omega_{RA}^2=\omega_0^2-2\gamma^2$; $A(0)=\frac{F_0}{m\omega_0^2}$.</p>
+</div>
+
+<div class="ej osc"><h2>4 · Cambio de régimen: forzado → libre (18/10/25)</h2>
+<p class="desc">Un resorte oscila forzado en resonancia de potencia; en $t=0$ le sacan la fuerza y queda oscilando libre (amortiguado). Con esa oscilación libre hay que reconstruir cómo eran la fuerza y el movimiento forzado.</p>
+<p class="enun">En $t=0$ (resorte en su máxima longitud) desaparece $F(t)=F_0\cos(\omega_{RP}t)$ y sigue $x(t)=8{,}04\text{ cm}\,e^{-0{,}4t}\cos(3{,}98t-0{,}1)$. En $t=\frac{4\pi}{\omega'}$, $E=10{,}24$ mJ. Hallar $F(t)$ y $x_{forz}(t)$.</p>
+<p class="paso"><b>1.</b> De la libre: $\gamma=0{,}4$ s$^{-1}$, $\omega'=3{,}98$ s$^{-1}$ ⇒ $\omega_0=\sqrt{\omega'^2+\gamma^2}=4{,}00$ s$^{-1}$. Estaba en resonancia de potencia ⇒ $\omega_{RP}=\omega_0=4$ s$^{-1}$ y $\delta=\frac\pi2$.</p>
+<p class="paso"><b>2.</b> En $t=0$ la posición y la velocidad no saltan: $x(0)=8{,}04\cos(-0{,}1)=8{,}0$ cm y $v(0)\approx0$ (máxima longitud) ⇒ el forzado tenía $A_{est}=8{,}0$ cm con su máximo en $t=0$.</p>
+<p class="paso"><b>3.</b> En $t=\frac{4\pi}{\omega'}=2T'$ la fase es la de $t=0$ ⇒ $v\approx0$ y $x=8{,}0\,e^{-0{,}4\cdot2T'}=8{,}0\cdot0{,}283=2{,}26$ cm ⇒ $E=\frac12kx^2$ ⇒ $k=\frac{2\cdot10{,}24\cdot10^{-3}}{0{,}0226^2}=40$ N/m; $m=\frac k{\omega_0^2}=2{,}5$ kg.</p>
+<p class="paso"><b>4.</b> En $\omega_0$: $A_{est}=\frac{F_0}{m\,2\gamma\omega_0}$ ⇒ $F_0=0{,}08\cdot2{,}5\cdot2\cdot0{,}4\cdot4=0{,}64$ N; la fuerza adelanta $\frac\pi2$ al desplazamiento.</p>
+<p class="res">$x_{forz}=8{,}0\cos(4t)$ cm; $F(t)=0{,}64\cos(4t+\frac\pi2)$ N</p>
+<p class="chico">(Con el origen de tiempo de $F=F_0\cos(4t)$: $x_{forz}=8{,}0\cos(4t-\frac\pi2)$.)</p>
+</div>
+
+<div class="ej ond"><h2>5 · Estacionaria fijo–fijo: tensión y % de energía (1C 2025)</h2>
+<p class="desc">Una cuerda atada en los dos extremos vibra como onda estacionaria, con nodos fijos. Con el número de nodos sale el armónico y la tensión; después, la energía de un tramo en un instante, y qué cambia si un extremo queda libre.</p>
+<p class="enun">Hilo $L=1$ m, $m=50$ g, extremos fijos, $f=100$ Hz, 4 nodos internos. a) Tensión; b) horizontal en $t=0$: % de energía elástica en $[0{,}3;0{,}5]$ m en $t=12{,}5$ ms; c) $f'$ con 2 nodos internos si un extremo pasa a libre.</p>
+<p class="paso"><b>a)</b> $\mu=\frac mL=0{,}05$ kg/m. Fijo–fijo: el armónico $n$ tiene $n-1$ nodos internos ⇒ $n=5$; $L=n\frac\lambda2$ ⇒ $\lambda=\frac{2L}5=0{,}4$ m; $v=\lambda f=40$ m/s; $v=\sqrt{F/\mu}$ ⇒ $F=\mu v^2=0{,}05\cdot1600$ <span class="res">$=80$ N</span></p>
+<p class="paso"><b>b)</b> $k=\frac{2\pi}\lambda=5\pi$ m$^{-1}$, $\omega=2\pi f=200\pi$ s$^{-1}$. $x=0$ es nodo ⇒ $y=A\sen(kx)\cos(\omega t+\varphi)$; horizontal en $t=0$ ⇒ $\cos\varphi=0$ ⇒ $\varphi=-\frac\pi2$: $y=A\sen(kx)\sen(\omega t)$.</p>
+<p class="paso">En $t=12{,}5$ ms: $\omega t=2{,}5\pi$ ⇒ $\sen^2(\omega t)=1$: máxima elongación, $u_K=0$ y toda la energía es elástica. $u_U=\frac12F(\partial_xy)^2=\frac12\mu\omega^2A^2\cos^2(kx)\sen^2(\omega t)$.</p>
+<p class="paso">$E_U=\frac12\mu\omega^2A^2\int_{0,3}^{0,5}\cos^2(5\pi x)dx=\frac12\mu\omega^2A^2\cdot0{,}1$ (el tramo mide $0{,}2=\frac\lambda2$ ⇒ la integral vale $\frac{\Delta x}2$). $E_{tot}=\frac14\mu\omega^2A^2L$ ⇒ $\frac{E_U}{E}=\frac{0{,}05}{0{,}25}$ <span class="res">$=20\%$</span></p>
+<p class="paso"><b>c)</b> Misma cuerda y tensión ⇒ $v=40$ m/s. Fijo–libre: $L=(2n-1)\frac\lambda4$; 2 internos + el fijo = 3 nodos ⇒ $n=3$ ⇒ $L=\frac{5\lambda}4$, $\lambda=0{,}8$ m; $f'=\frac v\lambda$ <span class="res">$=50$ Hz</span></p>
+</div>
+
+<div class="ej ond"><h2>6 · Estacionaria fijo–libre: masa y gráfico de $u_U(t)$ (1C 2026)</h2>
+<p class="desc">Una cuerda fija en un extremo y libre en el otro: la onda que viaja se refleja y forma una estacionaria. Hay que sacar la masa de la cuerda y graficar cómo varía en el tiempo la energía elástica en un punto.</p>
+<p class="enun">Fija en $x=0$ y libre en $L$; $F=24$ N; $y=A\cos(kx-\omega t)$ con $A=2$ cm, $k=1{,}25\pi$ m$^{-1}$, $\omega=100\pi$ s$^{-1}$; 3 nodos en total. a) $m$; b) graficar $u_U(t)$ en $x=0{,}8$ m entre 0,025 y 0,06 s ($t=0$ horizontal).</p>
+<p class="paso"><b>a)</b> $v=\frac\omega k=80$ m/s; $\mu=\frac F{v^2}=\frac{24}{6400}=3{,}75\cdot10^{-3}$ kg/m; $\lambda=\frac{2\pi}k=1{,}6$ m. Fijo–libre con 3 nodos ⇒ $L=\frac{5\lambda}4=2$ m <span class="res">$m=\mu L=7{,}5$ g</span></p>
+<p class="paso"><b>b)</b> La estacionaria es la suma de dos propagantes de amplitud $A$ ⇒ amplitud $2A=4$ cm. Fijo en 0 y horizontal en $t=0$: $y=0{,}04\sen(kx)\sen(\omega t)$.</p>
+<p class="paso">$u_U=\frac12F(\partial_xy)^2=\frac12F(0{,}04k)^2\cos^2(kx)\sen^2(\omega t)$; en $x=0{,}8$: $kx=\pi$, $\cos^2=1$; $\frac12\cdot24\cdot(0{,}05\pi)^2=0{,}296$ <span class="res">$u_U=0{,}296\sen^2(100\pi t)$ J/m</span></p>
+<p class="paso">Gráfico: período de $\sen^2$ = $\frac T2=0{,}01$ s (3,5 períodos en el intervalo); máx. 0,296 J/m en 0,025; 0,035; 0,045; 0,055 s; ceros en 0,03; 0,04; 0,05; 0,06 s. Escalas: 1 cm = 0,005 s; 1 cm = 0,1 J/m.</p>
+</div>
+
+<div class="ej geo"><h2>7 · Reflexión total: superficie iluminada</h2>
+<p class="desc">Una fuente de luz dentro de un líquido o de un cubo transparente: la luz solo sale donde llega con un ángulo menor al límite, y en el resto se refleja toda. Desde afuera se ve un círculo iluminado en cada cara.</p>
+<p class="paso"><b>Idea.</b> Sale luz solo donde $\theta&lt;\theta_L$, con $\sen\theta_L=\frac{n'}{n}$ (existe si $n&gt;n'$). Los rayos con $\theta=\theta_L$ marcan un círculo de radio $r=h\tg\theta_L$ ($h$: distancia de la fuente a la cara).</p>
+<p class="enun">(1C 2025) Cubo de arista $a$ lleno al ras, fuente en el fondo, $n'=1{,}14$, 53% iluminado. a) $n$; b) % si $n=1{,}1$.</p>
+<p class="paso">a) $h=a$: $\frac{\pi r^2}{a^2}=0{,}53$ ⇒ $\frac ra=\sqrt{0{,}53/\pi}=0{,}4107$ (&lt;0,5: el círculo entra entero) ⇒ $\tg\theta_L=0{,}4107$, $\theta_L=22{,}33°$; $n=\frac{n'}{\sen\theta_L}=\frac{1{,}14}{0{,}380}$ <span class="res">$\approx3{,}0$</span></p>
+<p class="paso">b) $n=1{,}1&lt;n'$: no hay ángulo límite, sale luz por toda la superficie <span class="res">100%</span></p>
+<p class="enun">(1C 2026) Cubo $a=2{,}5$ cm, $n=1{,}922$, en $n'=1{,}2$, foco en el centro. Área iluminada.</p>
+<p class="paso">$\sen\theta_L=\frac{1{,}2}{1{,}922}=0{,}624$ ⇒ $\theta_L=38{,}63°$; $h=\frac a2=1{,}25$ cm ⇒ $r=1{,}25\tg38{,}63°=0{,}999$ cm &lt; 1,25 (disco entero en cada cara) <span class="res">$6\pi r^2=18{,}8$ cm² (50,2% de $6a^2$)</span>. Con $n=1{,}1&lt;1{,}2$: 100%.</p>
+</div>
+
+<div class="ej geo"><h2>8 · Lente + espejo: haces salen paralelos (1C 2026)</h2>
+<p class="desc">Un objeto frente a una lente, y detrás un espejo que devuelve la luz, que vuelve a pasar por la lente. Se busca dónde poner el objeto para que la luz salga como un haz paralelo, y si el espejo es cóncavo o convexo.</p>
+<p class="enun">Objeto a $x$ a la izq. de lente conv. $f'=16$ cm; espejo $|R|=14{,}4$ cm a $d=8$ cm a la der. Salen paralelos: $x$ y tipo de espejo.</p>
+<p class="paso"><b>Idea.</b> Para salir paralela de la lente en la vuelta, su objeto tiene que estar en el foco: la imagen del espejo debe quedar a 16 cm a la derecha de la lente, o sea 8 cm detrás del espejo: $s_2'=+8$ cm.</p>
+<p class="paso"><b>Espejo</b> $\frac1{s_2'}+\frac1{s_2}=\frac2R$. Cóncavo ($R=-14{,}4$): $s_2=-3{,}79$ cm ⇒ la lente debería dar imagen a 4,21 cm ⇒ $\frac1s=\frac1{4{,}21}-\frac1{16}$, $s=+5{,}7$: objeto virtual ✗. Convexo ($R=+14{,}4$): $\frac1{s_2}=\frac2{14{,}4}-\frac18$ ⇒ $s_2=+72$ cm ⇒ la lente forma su imagen en $s_1'=8+72=80$ cm.</p>
+<p class="paso"><b>Lente</b> $\frac1{s_1'}-\frac1{s_1}=\frac1{f'}$ ⇒ $\frac1{s_1}=\frac1{80}-\frac1{16}=-\frac1{20}$ ⇒ $s_1=-20$ cm <span class="res">$x=20$ cm, espejo convexo</span></p>
+<p class="chico">(1C 2025: objeto 25 cm, $f'=20$, $d=10$: ida $s_1'=100$ ⇒ $s_2=+90$; vuelta desde el foco: $s_2'=+10$ ⇒ $\frac1{10}+\frac1{90}=\frac2R$ ⇒ $R=+18$ cm, convexo.)</p>
+</div>
+
+</div>
+
+<div class="page" style="--cols:2;--fs:7.3pt;--pad:3.5mm;--lh:1.15;--sep:1mm">
+
+<div class="ej geo"><h2>9 · Imagen en el mismo lugar del objeto (18/10/25)</h2>
+<p class="desc">Una lente divergente con un espejo cóncavo detrás: la luz va, se refleja y vuelve por la lente. Se pide la distancia lente–espejo para que la imagen final quede justo donde está el objeto.</p>
+<p class="enun">Objeto a 20 cm de lente divergente $f'=-80$ cm; espejo cóncavo $R=60$ cm a $D$. Se ve la imagen donde está el objeto. a) $D$; b) caracterizar.</p>
+<p class="paso"><b>1.</b> Lente: $\frac1{s_1'}=\frac1{f'}+\frac1{s_1}=-\frac1{80}-\frac1{20}$ ⇒ $s_1'=-16$ cm (virtual, 16 cm a la izq. de la lente).</p>
+<p class="paso"><b>2.</b> Para que la imagen final caiga en el objeto, la luz tiene que volver sobre sí misma: el objeto del espejo debe estar en su centro de curvatura ($s=R$ ⇒ $s'=R$). $D+16=60$ <span class="res">$D=44$ cm</span> (la ecuación general da esta única solución).</p>
+<p class="paso"><b>3.</b> $A_1=\frac{s_1'}{s_1}=\frac{-16}{-20}=0{,}8$; espejo $A_2=-\frac{s'}{s}=-1$; vuelta $A_3=\frac{20}{16}=1{,}25$ ⇒ <span class="res">$A=-1$: real, invertida, mismo tamaño</span></p>
+</div>
+
+<div class="ej geo"><h2>10 · Espejo + lente: dos imágenes en la pantalla (Recu 30/5/26)</h2>
+<p class="desc">Un objeto entre un espejo cóncavo y una lente que proyecta sobre una pantalla. Llegan dos imágenes, una directa por la lente y otra que antes rebota en el espejo; se busca la posición en la que salen iguales.</p>
+<p class="enun">Espejo cóncavo, objeto a $x$, lente conv. $f'=30$ cm; espejo–pantalla 155 cm. Dos imágenes iguales (una derecha, otra invertida), 50% mayores. $x$ y $R$.</p>
+<p class="paso"><b>1.</b> La lente enfoca un solo plano ⇒ la imagen del espejo cae sobre el objeto ⇒ objeto en el centro de curvatura ($s=R$, $A_{esp}=-1$): por eso una sale derecha y otra invertida.</p>
+<p class="paso"><b>2.</b> Imagen directa real sobre la pantalla: $A=\frac{s'}s=-1{,}5$ ⇒ $s'=-1{,}5s$; $\frac1{s'}-\frac1s=\frac1{30}$ ⇒ $s=-50$ cm, $s'=75$ cm.</p>
+<p class="paso"><b>3.</b> $x+50+75=155$ <span class="res">$x=30$ cm, $R=-30$ cm</span> (por el espejo: $A=(-1)(-1{,}5)=+1{,}5$ ✓)</p>
+</div>
+
+<div class="ej geo"><h2>Receta óptica geométrica</h2>
+<p class="chico"><b>1)</b> Elemento por elemento: la imagen de uno es el objeto del siguiente ($s_2=s_1'-D$). <b>2)</b> Signos: $+$ en el sentido de la luz que llega a ESE elemento (después del espejo, $+$ hacia la izquierda). <b>3)</b> Objeto detrás del elemento ⇒ virtual ($s&gt;0$). <b>4)</b> "Paralelos" ⇒ foco; "mismo lugar / ubicación verdadera" ⇒ imagen final = objeto. <b>5)</b> Probar cóncavo y convexo y descartar el que da un objeto real imposible. <b>6)</b> $A_{total}=A_1A_2\cdots$; $A&lt;0$ invertida, $s'&gt;0$ real.</p>
+</div>
+
+<div class="ej fis"><h2>11 · Doble rendija: dos láminas + incidencia oblicua (Recu 7/6/25)</h2>
+<p class="desc">Experimento de Young (doble rendija) con una lámina transparente delante de cada rendija: las láminas corren el patrón de franjas. Después se inclina el haz para devolver el orden 0 al centro.</p>
+<p class="enun">$d=32$ µm, $a=\frac d4=8$ µm, $\lambda_0=600$ nm, en aire. Vidrio $n_v=1{,}5$ (espesor $e$) en una rendija, acrílico $n_a=1{,}2$ ($2e$) en la otra: corre 4 franjas. Luego incidencia oblicua $\theta_i$ para volver el orden 0 al centro. a) $e$, $\theta_i$; b) $I$ en el centro ($I_0=1$).</p>
+<p class="paso"><b>a)</b> Cada lámina suma $e(n_l-1)$ al camino de su haz: vidrio $0{,}5e$; acrílico $2e\cdot0{,}2=0{,}4e$ ⇒ diferencia $0{,}1e$ (más camino del lado del vidrio). Corrimiento de 4 franjas ⇔ $0{,}1e=4\lambda_0=2{,}4$ µm <span class="res">$e=24$ µm</span> (acrílico 48 µm).</p>
+<p class="paso">El orden 0 se corrió hacia el vidrio. Para traerlo al centro, el haz debe llegar antes a la rendija con vidrio, así el otro recorre $d\sen\theta_i$ de más: $d\sen\theta_i=0{,}1e$ ⇒ $\sen\theta_i=\frac{2{,}4}{32}=0{,}075$ <span class="res">$\theta_i=4{,}30°$</span></p>
+<p class="paso"><b>b)</b> Centro ($\theta=0$): es el orden 0 ⇒ $\cos^2\gamma=1$. Difracción: $\beta=\frac{\pi a}{\lambda_0}(\sen\theta-\sen\theta_i)=\frac{\pi\cdot8\cdot(-0{,}075)}{0{,}6}=-\pi$ ⇒ $\sen\beta=0$ ⇒ <span class="res">$I=4I_0\cos^2\gamma\left(\frac{\sen\beta}\beta\right)^2=0$</span> (el orden 0 cae en el primer mínimo de difracción).</p>
+</div>
+
+<div class="ej fis"><h2>12 · Láminas en gas, luego líquido (1C 2026)</h2>
+<p class="desc">Doble rendija dentro de un gas, con dos láminas que corren el patrón de franjas. Después se llena el espacio con un líquido elegido para que el orden 0 vuelva al centro.</p>
+<p class="enun">Todo en gas $n=1{,}2$; $a=4$ µm, $d=16$ µm, $\lambda_0=500$ nm normal. Lámina $n_1=1{,}6$ ($e$): corre 4 franjas. Otra lámina $n_2=1{,}15$ ($e$): nuevo corrimiento. a) $e$ e $I$(centro), $I_0=1$; b) líquido $n'$ que devuelve el orden 0 al centro.</p>
+<p class="paso"><b>a)</b> La lámina 1 suma $e(n_1-n)=0{,}4e$; 4 franjas ⇒ $0{,}4e=4\lambda_0=2$ µm <span class="res">$e=5$ µm</span></p>
+<p class="paso">La lámina 2 suma $e(n_2-n)=-0{,}05e$. Para que b) tenga solución va en la misma rendija: $\Delta CO=0{,}35e=1{,}75$ µm $=3{,}5\lambda_0$ (orden 0 a 3,5 franjas, mismo lado). Centro: $\gamma=\frac{\pi\Delta CO}{\lambda_0}=3{,}5\pi$ ⇒ $\cos^2\gamma=0$; $\beta=0$ <span class="res">$I=0$</span></p>
+<p class="paso"><b>b)</b> Con líquido: $e(1{,}6-n')+e(1{,}15-n')=0$ <span class="res">$n'=1{,}375$</span> <span class="chico">(en rendijas distintas $\Delta CO=0{,}45e$ no depende de $n'$ ⇒ no tendría solución; $I$ también daría 0)</span></p>
+</div>
+
+<div class="ej fis"><h2>13 · Cámara de aceite + gota de aire (1C 2025)</h2>
+<p class="desc">Doble rendija bajo agua, con una cámara de aceite delante de una rendija que corre el patrón. Después aparece una gota de aire en la misma rendija, que lo corre en sentido contrario.</p>
+<p class="enun">En agua ($n=\frac43$), $a=2{,}25$ µm, $d=18$ µm, $\lambda_0=600$ nm. Cámara de espesor $e$ con aceite $n$: corre 6 franjas. Gota de aire de diámetro $\frac e2$ en la misma rendija: vuelve 3,5 franjas. a) $e$, $n$; b) $I$ en el centro y en el máx. $m=6$.</p>
+<p class="paso"><b>a)</b> La gota cambia agua por aire: suma $\frac e2(1-\frac43)=-\frac e6$; vuelve 3,5 franjas ⇒ $\frac e6=3{,}5\lambda_0$ <span class="res">$e=21\lambda_0=12{,}6$ µm</span>. Cámara: $e(n-\frac43)=6\lambda_0$ ⇒ $n=\frac43+\frac6{21}$ <span class="res">$=1{,}62$</span></p>
+<p class="paso"><b>b)</b> Neto agregado $6\lambda_0-3{,}5\lambda_0=2{,}5\lambda_0$ ⇒ $\Delta CO=n\,d\sen\theta+2{,}5\lambda_0$. Centro: $\gamma=2{,}5\pi$, $\cos^2\gamma=0$ <span class="res">$I=0$</span></p>
+<p class="paso">$m=6$: $\Delta CO=6\lambda_0$ ⇒ $n\,d\sen\theta=3{,}5\lambda_0$ ⇒ $\beta=\frac{\pi a}{\lambda_0}n\sen\theta=\pi\frac ad\cdot3{,}5=\frac{3{,}5\pi}8$ <span class="res">$I=4I_0\left(\frac{\sen\beta}\beta\right)^2=2{,}04$</span></p>
+</div>
+
+<div class="ej red"><h2>14 · Red: ¿cuántas líneas se ven? (1C 2025)</h2>
+<p class="desc">Una red de difracción iluminada con tres colores, dos casi iguales. Hay que contar las líneas que se ven, según el ángulo máximo, los órdenes que faltan y si los dos colores parecidos llegan a separarse.</p>
+<p class="enun">Red de 4,5 cm, 1500 rendijas/cm, $a=5$ µm; $\lambda$: 500; 500,01 y 540 nm. Máximo número de líneas.</p>
+<p class="paso"><b>Datos.</b> $d=\frac1{1500}$ cm $=6{,}667$ µm; $N=4{,}5\cdot1500=6750$ rendijas.</p>
+<p class="paso"><b>(i)</b> $\sen\theta=\frac{m\lambda}d&lt;1$: 500 → $m\le13$; 540 → $m\le12$. <b>(ii)</b> Faltantes $m=p\frac da=p\frac43$ entero ⇒ $m=4,8,12$. <b>(iii)</b> 500 y 500,01 se separan si $mN\ge\frac{500}{0{,}01}=50000$ ⇒ $m\ge7{,}4$ ⇒ desde $m=8$, que falta ⇒ desde 9.</p>
+<table><tr><th>$m$</th><td>1–3</td><td>4</td><td>5–7</td><td>8</td><td>9–11</td><td>12</td><td>13</td></tr>
+<tr><th>líneas</th><td>2 c/u</td><td>0</td><td>2 c/u</td><td>0</td><td>3 c/u</td><td>0</td><td>2 (sin 540)</td></tr></table>
+<p class="res">Un lado: $6+6+9+2=23$ ⇒ total $2\cdot23+1=47$ líneas</p>
+</div>
+
+<div class="ej red"><h2>15 · Red con pantalla finita y $\lambda$ cercana (1C 2026)</h2>
+<p class="desc">Una red con dos colores y una pantalla de ancho limitado: contar las líneas que caen en la pantalla, y ver si un tercer color muy parecido a uno de ellos llega a verse separado.</p>
+<p class="enun">Haz de 5 mm con 400 y 600 nm; 125 rendijas/mm, $a=2$ µm; pantalla de 56 cm a 100 cm. a) Líneas; b) ¿se resuelve $\lambda_3=400{,}2$ nm? ¿En qué orden?</p>
+<p class="paso"><b>Datos.</b> $d=8$ µm, $N=5\cdot125=625$; $\frac da=4$ ⇒ faltan $m=4,8$. Borde de la pantalla: $\tg\theta_{max}=\frac{28}{100}$ ⇒ $\sen\theta_{max}=0{,}270$.</p>
+<p class="paso"><b>a)</b> $\sen\theta=\frac{m\lambda}d$: 400 → $0{,}05m$: $m=1,2,3,5$; 600 → $0{,}075m$: $m=1,2,3$. 400 ($m=3$) y 600 ($m=2$) caen en 0,15 ⇒ una sola línea. Un lado: 0,05; 0,075; 0,10; 0,15; 0,225; 0,25 <span class="res">$2\cdot6+1=13$ líneas</span></p>
+<p class="paso"><b>b)</b> $mN\ge\frac{400}{0{,}2}=2000$ ⇒ $m\ge3{,}2$; $m=4$ falta; $m=5$: $\sen\theta=\frac{5\cdot0{,}4002}{8}=0{,}250&lt;0{,}270$ (entra) <span class="res">sí, en $m=5$</span></p>
+</div>
+
+<div class="ej red"><h2>16 · 5 rendijas con 3 tapadas (Recu 30/5/26)</h2>
+<p class="desc">Una placa con 5 rendijas: primero solo están abiertas las de los extremos (como una doble rendija) y después se destapan todas (como una red de 5). Se comparan intensidades y se cuentan los máximos.</p>
+<p class="enun">5 rendijas (sep. $d$), las 3 centrales tapadas. En P, $\Delta CO=\frac\lambda2$ entre las abiertas. El 8º orden es el primero suprimido y $\frac da$ es entero. Se destapan. a) $I_P/I_{max}$; b) máximos en la campana central.</p>
+<p class="paso"><b>1.</b> Las abiertas forman una doble rendija de separación $4d$ ⇒ primer faltante $m=\frac{4d}a=8$ ⇒ $\frac da=2$.</p>
+<p class="paso"><b>2.</b> Con las 5, entre vecinas: $\Delta CO=\frac{\lambda/2}4=\frac\lambda8$ ⇒ $\gamma=\frac\pi8$; $a\sen\theta=\frac{d\sen\theta}2=\frac\lambda{16}$ ⇒ $\beta=\frac\pi{16}$; $I_{max}=N^2I_0=25I_0$.</p>
+<p class="paso">$\frac{I_P}{I_{max}}=\frac1{25}\left(\frac{\sen(5\pi/8)}{\sen(\pi/8)}\right)^2\left(\frac{\sen(\pi/16)}{\pi/16}\right)^2=\frac{5{,}83\cdot0{,}987}{25}$ <span class="res">$\approx0{,}23$</span></p>
+<p class="paso"><b>3.</b> $\frac da=2$ ⇒ en la campana central quedan $m=-1,0,1$ ($\pm2$ faltan); entre principales hay $N-2=3$ secundarios, en 4 intervalos <span class="res">3 principales + 12 secundarios</span></p>
+</div>
+
+<div class="ej red"><h2>17 · Luz blanca: solapamiento</h2>
+<p class="desc">Luz blanca sobre una red: cada orden es un pequeño arcoíris, y desde el 2º se pisa con el siguiente. Se calcula el tamaño de esa zona de solapamiento.</p>
+<p class="paso"><b>(Recu 7/6/25)</b> Pantalla a 2 m, solapamiento de 2º y 3º orden de 8 cm. Paraxial: $y=D\sen\theta=DmK\lambda$. El 2º termina en $2\cdot700=1400$ nm y el 3º empieza en $3\cdot400=1200$ nm ⇒ $\Delta y=DK(1400-1200)$ nm $=0{,}08$ m <span class="res">$K=2\cdot10^5$ m$^{-1}$ (2000/cm)</span></p>
+<p class="paso"><b>(Recu 30/5/26)</b> 2000 rendijas/cm, $a=1{,}25$ µm, detector de 180 cm a 2 m. $d=5$ µm, $\frac da=4$ ⇒ falta todo el 4º orden. $\sen\theta=\frac{m\lambda}d$: 1º 0,08–0,14; 2º 0,16–0,28; 3º 0,24–0,41 (corta el detector: $\sen\theta_{max}=0{,}410$). Solapan 2º y 3º entre 0,24 y 0,28 ⇒ $y=2\tg\theta$: de 49,4 a 58,3 cm (8,9 cm por lado) <span class="res">$\frac{2\cdot8{,}9}{180}\approx9{,}9\%$</span></p>
+</div>
+
+<div class="ej fis"><h2>18 · Rayleigh, lámina delgada, Babinet</h2>
+<p class="desc">Tres casos cortos. Rayleigh: dos faros lejanos se ven como una sola luz hasta que el auto está cerca. Lámina: una película de aceite que, con luz blanca, anula ciertos colores al reflejar. Babinet: un hilo difracta igual que una rendija del mismo ancho.</p>
+<p class="paso"><b>Rayleigh</b> (Recu 7/6/25): pupila 2,44 mm, $\lambda=600$ nm; auto a 8 km a 60 km/h que se resuelve a los 3 min ⇒ recorrió 3 km ⇒ $L=5$ km. Se resuelve justo en el límite: $\theta_{min}=1{,}22\frac\lambda D=1{,}22\frac{600\cdot10^{-9}}{2{,}44\cdot10^{-3}}=3\cdot10^{-4}$ <span class="res">$d=L\theta_{min}=1{,}5$ m</span></p>
+<p class="paso"><b>Lámina</b> (Recu 30/5/26): aceite 1,35 de 1,2 µm sobre vidrio 1,6; ¿qué $\lambda$ desaparecen en la reflejada? Aire→aceite y aceite→vidrio: las dos reflexiones invierten ⇒ $\Delta\varphi_{ref}=0$. Destructiva: $2ne=(m+\frac12)\lambda$ ⇒ $\lambda=\frac{3240\text{ nm}}{m+0{,}5}$; entre 400 y 700 nm <span class="res">589, 498 y 432 nm</span> ($m=5,6,7$)</p>
+<p class="paso"><b>Babinet</b> (Recu 30/5/26): hilo de 30 µm ≡ rendija de 30 µm; $\lambda=560$ nm, lente $f=40$ cm, pantalla de 7 cm en el foco. Mínimos: $a\sen\theta_p=p\lambda$, $y_p=f\tg\theta_p$: 0,75; 1,49; 2,24; 3,00 cm (3,75 &gt; 3,5 no entra) <span class="res">8 mínimos</span> (4 por lado)</p>
+</div>
+
+<div class="ej fis"><h2>Receta doble rendija / redes</h2>
+<p class="chico"><b>1)</b> $\Delta CO$ = parte geométrica ($n\,d\sen\theta-n_id\sen\theta_i$) + láminas $\Sigma e(n_l-n_{medio})$. <b>2)</b> Corrimiento de $N$ franjas ⇔ las láminas suman $N\lambda_0$. <b>3)</b> $\gamma=\frac\pi{\lambda_0}\Delta CO$; $\beta=\frac{\pi a}{\lambda_0}(n\sen\theta-n_i\sen\theta_i)$ (las láminas NO entran en $\beta$). <b>4)</b> $I=4I_0\cos^2\gamma(\frac{\sen\beta}\beta)^2$: $\Delta CO$ semientero ⇒ 0; $\beta=p\pi$ ⇒ 0. <b>5)</b> Redes: $m_{max}$ (sen &lt; 1 o pantalla) → faltantes $m=p\frac da$ → resolución $mN\ge\frac\lambda{\Delta\lambda}$ → coincidencias entre $\lambda$ → total $2\cdot$lado$+1$.</p>
+</div>
+
+</div>
