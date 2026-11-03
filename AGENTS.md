@@ -49,17 +49,25 @@ node tools/build.mjs --variantes=letra,letra-calco  # versiones con la letra del
   - Por eso el `--fs` de cada página es solo un punto de partida.
   - Una fórmula `$$…$$` demasiado ancha se desborda de su columna; si pasa, partila en renglones.
 - `data-flujo` en la primera `.page` hace que `ajustar.js` elija además en qué bloque cortar entre las dos caras, para maximizar la letra. Lo usan `ejercicios.html` y `ejercicios-v2.html`.
-- `Para imprimir/` (en la raíz del proyecto) tiene las versiones para imprimir, tipeada y con la letra del usuario: Ejercicios (18), Ejercicios (19) y Fórmulas. Si se cambia una fuente en `src/`, recopiar desde `salida/`.
+- `Para imprimir/` (en la raíz del proyecto) tiene las versiones para imprimir. Hoy: `Ejercicios v4 (23)`, `v5 (21)`, `v6 (23)` y `v7 (24)` tipeados, para que el usuario los imprima y elija según cómo se lea la letra, y Fórmulas (tipeada y con la letra del usuario). Si se cambia una fuente en `src/`, recopiar desde `salida/`.
 - `src/ejercicios.html` tiene 18 ejercicios. Sacó la fibra óptica (salió una sola vez, en 2023) y sumó el cambio de régimen forzado → libre (recuperatorio 18/10/25, la variante más repetida).
 - `src/ejercicios-v2.html` tiene 19: los mismos 18 más MAS → sobreamortiguado (1P 2024, ej. 3; la solución manuscrita del PDF usa mal $x_0=-10$ cm).
 - `src/ejercicios-v3.html` tiene 20: la v2 más "Estacionaria: energía en dos instantes" (recuperatorio 18/10/25, ej. 1: $A=1$ cm; en $t'$ la cuerda está horizontal ⇒ $U'=0$).
-- `Para imprimir/` tiene Ejercicios (18), (19) y (20), y Fórmulas, cada uno tipeado y con la letra del usuario. También tiene "Ejercicios (20) - letra Mara.pdf".
+- Las versiones de 18, 19 y 20 ejercicios se sacaron de `Para imprimir/`; sus PDF siguen en `salida/` y se regeneran desde `src/`, incluida la de la letra de Mara.
+- `src/ejercicios-v4.html` tiene 23: la v3 más tres ejercicios del parcial 2C 2026 (9: identificar el modelo de cuerda y $E_K(t)$; 14: lente sumergida + divergente; 20: red con detector roto y corrido), y sus variantes de cambio de régimen y de láminas como notas en los ejercicios 4 y 15. La numeración cambia desde el 9 respecto de la v3. También suma recetas de oscilaciones y de ondas, las fórmulas clave dentro de cada receta y un recordatorio inicial, "En todos los ejercicios"; los bloques cortos ocupan el espacio que deja el corte entre caras, que `ajustar.js` solo hace entre bloques completos.
+- `src/ejercicios-v5.html` tiene 21. Se armó el 2/11/2026 desde la v4 según la frecuencia de `Parciales viejos/catalogo-ejercicios.md`: suma propagante con ⟨P⟩ → estacionaria (7), reflexión total de un rayo con espejo sumergido y prisma (9) y convergente + divergente sin imagen (13), los tres del recuperatorio del 1/11/2025 o del 18/6/2024. Saca MAS → sobreamortiguado (su fórmula queda en la receta), la energía en dos instantes y la identificación del modelo del 2C 2026 (queda como ejemplo en la receta de ondas). La imagen en el mismo lugar y las rendijas tapadas quedan como notas. Todas las cuentas nuevas se verificaron con Python. Los ejercicios 5 y 14 quedan partidos entre columnas: forzar que no se partan dejaba huecos y bajaba la letra. Letra: 6,43 pt; con un ejercicio más baja a unos 6,2 pt y con dos a unos 6,0 pt (la v4 está en 6,09 pt).
+- `src/ejercicios-v6.html` tiene 23: la v5 más "barra con dos caras esféricas, imagen en la ubicación verdadera" (15, 1P 14/9/2024; la resolución del PDF olvida el n y da mal) y "aumento dado; al acercar el objeto no hay imagen" (10, final 7/7/2025). La receta de óptica geométrica está partida en dos bloques ("Fórmulas de óptica geométrica" al final de la cara 1 y "Receta óptica geométrica" al principio de la cara 2) para que el corte entre caras quede parejo: así la letra llega a 6,07 pt, el máximo posible con ese contenido (con la receta entera quedaba en 6,01 pt y un hueco de 38 mm).
+- `src/ejercicios-v7.html` tiene 24: la v6 más el telescopio con lente y espejo (10, recuperatorio 7/6/2025, dos soluciones: R = −6 m o +18 m) y dos reglas sin cuentas, "Espejos" en la receta de óptica y "Interfranja" en la de doble rendija. Letra: 5,92 pt.
+- `src/ejercicios-v6-formulas.html` es la v6 con `--kx:1.2em` en cada `.page`: las fórmulas van a 1,2 veces el texto (lo normal es 1,08, definido en `hoja.css` como `var(--kx, 1.08em)`). Texto 5,86 pt y fórmulas 7,03 pt, contra 6,07 y 6,56 de la v6. Probado: con 1,3 el texto baja a 5,57 pt y con 1,4 a 5,28 pt. Las fracciones en línea siguen chicas porque KaTeX las reduce al 70%.
+- El usuario elige entre v5, v6, v6 con fórmulas grandes y v7 después de imprimirlas.
+- Por ahora se modifica solo la versión tipeada: `Para imprimir/Ejercicios v5 (21) - tipeado.pdf`, `Ejercicios v6 (23) - tipeado.pdf`, `Ejercicios v7 (24) - tipeado.pdf` y `Formulas - tipeado.pdf` están al día. `Formulas - mi letra.pdf` y las demás manuscritas o para calcar son anteriores a estos cambios. Generarlas solo cuando el usuario lo pida, más cerca del examen.
+- `tools/build.mjs` corre en Windows y en macOS (elige la ruta de Chrome según el sistema). En Windows no hay `.venv`.
 - **Letra de Mara (otra persona):**
   - Su plantilla escrita está en `salida/` ("fuente a mano mara pag 1.png", "segunda pagina mara.png", "pagina 3 mara fuente.png").
   - Fuente: `.venv/bin/python tools/fuente.py "salida/fuente a mano mara pag 1.png" "salida/segunda pagina mara.png" "salida/pagina 3 mara fuente.png" --nombre mara --descartar a1,b1,b2 --usar "I=|"`. En los cuadros de la I escribió una "i" con punto, y la a1, la b1 y la b2 salieron de otro tamaño.
   - Hoja: `node tools/build.mjs ejercicios-v3 --variantes=letra --fuente=mara`, que genera `salida/ejercicios-v3-letra-mara.pdf`.
   - La fuente del usuario no se toca: va en `build/fuente/` y la de Mara en `build/fuente-mara/`.
-- El criterio es un catálogo de frecuencia de los 12 exámenes: estacionaria 7, reflexión total 6, lente + espejo 6, doble rendija 6, cambio de régimen 5, red 5.
+- El criterio para elegir ejercicios es la frecuencia de cada tipo en los 57 exámenes de `Parciales viejos/` (7 parciales únicos, 31 primeros y segundos parciales viejos y 19 finales). Está en `Parciales viejos/catalogo-ejercicios.md`, que también indica qué ejercicio de la hoja cubre cada tipo y cuáles repite la cátedra casi textuales. Si se agregan exámenes, sumarlos ahí.
 - El usuario va a llevar al examen la hoja de **ejercicios**. Pidió resoluciones un poco más desarrolladas (planteo, fórmula, reemplazo, unidades), porque casi no hizo práctica, manteniendo los 18 ejercicios en 2 caras. Cada ejercicio empieza con un párrafo `.desc` que cuenta en palabras qué sistema plantea.
 - `tools/prueba_relleno.py` rellena la plantilla con una letra del sistema (`build/plantilla-prueba.pdf`). Sirve para probar todo el circuito sin la plantilla real.
 
@@ -67,7 +75,7 @@ node tools/build.mjs --variantes=letra,letra-calco  # versiones con la letra del
 
 - **Antes** (en 2023 y 2024) había dos parciales: el **1P** (oscilaciones, ondas, óptica geométrica) y el **2P** (interferencia, difracción, redes y termodinámica).
 - **Ahora** (por lo menos desde 1C 2025) se toma un **parcial único** (“Examen intermedio”) con todos los temas de `Teoria/` **menos termodinámica**. Entonces entra todo lo de los 1P viejos y la parte de óptica física de los 2P viejos.
-- **Fuera del parcial**: `Teoria/11_Temperatura-calor_2Q2024.pdf`, las secciones 24–28 de la guía (calorimetría → segundo principio), la parte de termodinámica de las hojas de fórmulas y los ejercicios 5–6 del `Final_2025_07_07.pdf`.
+- **Fuera del parcial**: `Teoria/11_Temperatura-calor_2Q2024.pdf`, las secciones 24–28 de la guía (calorimetría → segundo principio), la parte de termodinámica de las hojas de fórmulas, la polarización (aparece en finales y segundos parciales viejos) y los tubos de sonido (tubo de Kundt, abierto–cerrado: aparecen en finales, pero `Teoria/04`–`05` no los tratan).
 
 Temas que entran, en el orden de la teoría (`Teoria/01`–`10`) y con las secciones de la guía de problemas:
 
@@ -96,12 +104,13 @@ Temas que entran, en el orden de la teoría (`Teoria/01`–`10`) y con las secci
 ## Estructura de carpetas
 
 - `Teoria/`: resúmenes de clase del 2Q2024 (`01`–`11`). `Teoria/Apuntes/` tiene apuntes complementarios por tema (subamortiguado, ancho de resonancia, energía en cuerdas, batidos, desfasaje con láminas en la doble rendija, red de N ranuras, etc.). Hay dos `.pptx` de óptica geométrica.
-- `Parciales viejos/`:
-  - **Parciales únicos (los más representativos):** parcial 1C 2025 (`2025_1C_P con solucion.pdf` y `WhatsApp ... (1).jpeg`), recuperatorio 7/6/2025 (`WhatsApp ....jpeg`), examen intermedio 18/10/2025 (`f2-emt-recu-2c-2025.pdf`), parcial 1C 2026 (`Parcial 1er cuatri 2026.jpeg`) y recuperatorio 30/5/2026 (`f2-emt-recu-1c-2026.pdf`).
-  - **Formato viejo de dos parciales:**
-    - `1P 2023 1C/2C`, `2P 2023 2C`, `1P 2024 1C/2C` y `2P 2024 1C`. Todos tienen soluciones manuscritas de alumnos.
-    - Del 2P solo sirven los ejercicios de óptica física. En `2P 2023 2C`, los ejercicios 3–4 son de termodinámica.
-  - `Física II – Cuadernillo de parciales resueltos.pdf`: resoluciones paso a paso del recuperatorio 1C 2025 y del parcial 1C 2025, más ejercicios extra de la guía. Cada resolución dice qué sección de la guía usa.
+- `Parciales viejos/` (sin duplicados desde el 2/11/2026; nombres `<año> <cuatrimestre> - <examen> (<día-mes>)`, y los finales `<año>-<mes> Final <I, II o III>`):
+  - `catalogo-ejercicios.md`: qué trae cada examen y la frecuencia de cada tipo de ejercicio.
+  - `Parciales únicos/` (**los más representativos**): intermedio 24/5/2025 (con solución), recuperatorio 7/6/2025, intermedio 18/10/2025, recuperatorio 1/11/2025, parcial 1C 2026 (`.jpeg`) y recuperatorio 30/5/2026. El parcial 2C 2026, que el usuario desaprobó, está solo en el doc https://claude.ai/artifact/TssbiZfX7pVfuYX2gr92NH.
+  - `Primeros parciales (formato viejo)/`: 18 exámenes, 2015–2024 (oscilaciones, ondas y óptica geométrica). Los de 2020 2C y los de 2023–2024 con "con solución" traen la resolución de un alumno.
+  - `Segundos parciales (formato viejo)/`: 12 exámenes, 2016–2024. Solo sirve la óptica física; desde 2022 la otra mitad es termodinámica, y hasta 2019 había polarización.
+  - `Finales/`: 19 finales, 2018–2026. Más conceptuales que los parciales.
+  - `Resoluciones de alumnos/`: el cuadernillo de parciales resueltos (recuperatorio 1C 2025 y parcial 1C 2025, con la sección de la guía que usa cada resolución), las resoluciones de nash (finales 2021–2023; segundos parciales 2022–2023, con el recuperatorio del 2P 1C 2023, que no está en otro archivo) y las de rodri (finales de diciembre 2023 y julio 2024).
 - `Hojas de formulas encontradas/`: hojas de otros alumnos. Las de “Primer/Segundo Parcial” y `Hoja de formulas.pdf` son manuscritas y escaneadas. Ojo: incluyen termodinámica.
 - `guía de ejercicios F2.pdf`: guía oficial de problemas del 2C 2026 (74 páginas, secciones 1–28, con la convención de signos de óptica en la p. 23).
 

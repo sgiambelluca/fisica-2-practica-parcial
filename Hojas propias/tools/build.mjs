@@ -3,11 +3,13 @@
 import fs from "node:fs";
 import path from "node:path";
 import { execFileSync } from "node:child_process";
-import { fileURLToPath } from "node:url";
+import { fileURLToPath, pathToFileURL } from "node:url";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
-const katex = (await import(path.join(ROOT, "vendor/katex/dist/katex.mjs"))).default;
-const CHROME = "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome";
+const katex = (await import(pathToFileURL(path.join(ROOT, "vendor/katex/dist/katex.mjs")).href)).default;
+const CHROME = process.platform === "win32"
+  ? "C:/Program Files/Google/Chrome/Application/chrome.exe"
+  : "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome";
 
 const args = process.argv.slice(2);
 const flag = args.find((a) => a.startsWith("--variantes="));
@@ -49,12 +51,12 @@ ${extraHead}</head><body class="${variante.replace("-", " ")}">${cuerpo}</body><
     const pdfPath = path.join(ROOT, "salida", `${nombre}-${variante}${SUF}.pdf`);
     execFileSync(CHROME, [
       "--headless=new", "--disable-gpu", "--no-pdf-header-footer", "--allow-file-access-from-files",
-      "--virtual-time-budget=10000", `--print-to-pdf=${pdfPath}`, "file://" + htmlPath,
+      "--virtual-time-budget=10000", `--print-to-pdf=${pdfPath}`, pathToFileURL(htmlPath).href,
     ], { stdio: "ignore" });
     // tamaño de letra con que quedó cada cara (lo deja tools/ajustar.js)
     const dom = execFileSync(CHROME, [
       "--headless=new", "--disable-gpu", "--allow-file-access-from-files", "--virtual-time-budget=10000",
-      "--dump-dom", "file://" + htmlPath,
+      "--dump-dom", pathToFileURL(htmlPath).href,
     ], { stdio: ["ignore", "pipe", "ignore"], maxBuffer: 1 << 28 }).toString();
     const fs_ = [...dom.matchAll(/data-fs="([\d.]+)"/g)].map((m) => m[1] + "pt").join(", ");
     console.log("ok", path.relative(ROOT, pdfPath), "| letra:", fs_);

@@ -34,10 +34,13 @@ li { margin: 0 0 0.25mm; }
 .ojo { color: #b3261e; }
 .ojo::before { content: "⚠ "; }
 .chico { font-size: 0.9em; }
+.vars { font-size: 0.9em; border-left: 0.8pt solid var(--c); padding-left: 1mm; color: #222; }
+.usar b { color: var(--c); }
+.nb { white-space: nowrap; }
 .res { font-weight: bold; color: var(--c, #1f4e8c); }
 table { border-collapse: collapse; font-size: 0.95em; margin: 0.3mm 0 0.6mm; }
 td, th { border: 0.3pt solid #999; padding: 0.2mm 0.8mm; vertical-align: middle; }
-.katex { font-size: 1.08em; }
+.katex { font-size: var(--kx, 1.08em); }
 .katex-display { margin: 0.4mm 0; }
 .osc { --c: #1f4e8c; } .ond { --c: #2e7d32; } .geo { --c: #8e44ad; } .fis { --c: #c0392b; } .red { --c: #d35400; } .ext { --c: #444; }
 

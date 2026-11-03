@@ -1,85 +1,113 @@
 <div class="page" style="--cols:2;--fs:8.3pt">
 
 <div class="sec osc"><h2>MAS (resorte / péndulo)</h2>
-<p>$m\ddot x + kx = 0$ ($x$ desde el equilibrio) &nbsp; $\omega_0=\sqrt{k/m}$, $T=\frac{2\pi}{\omega_0}=\frac1f$</p>
+<p class="usar"><b>Cuándo:</b> sin rozamiento y sin fuerza externa.</p>
+<p class="vars">$x$: posición desde el equilibrio; $A$: amplitud; $\omega_0$: frecuencia angular natural; $\varphi_0$: fase inicial; $x_0,v_0$: posición y velocidad en $t=0$; $k$: constante del resorte; $m$: masa; $T$: período; $f$: frecuencia.</p>
+<p>$m\ddot x + kx = 0$ &nbsp; $\omega_0=\sqrt{k/m}$, $T=\frac{2\pi}{\omega_0}=\frac1f$</p>
 <p>$x=A\cos(\omega_0 t+\varphi_0)$ &nbsp; $v=-A\omega_0\sen(\omega_0t+\varphi_0)$ &nbsp; $a=-\omega_0^2x$</p>
 <p>$A=\sqrt{x_0^2+\left(\frac{v_0}{\omega_0}\right)^2}$ &nbsp; $\tg\varphi_0=-\frac{v_0}{x_0\omega_0}$ <span class="chico">(signo de $\cos\varphi_0$ = signo de $x_0$)</span></p>
-<p>$E=\frac12kA^2=\frac12mv_{max}^2$ &nbsp; $v_{max}=A\omega_0$ &nbsp; $a_{max}=A\omega_0^2$</p>
+<p>Energía: $E=\frac12kA^2=\frac12mv_{max}^2$ &nbsp; $v_{max}=A\omega_0$ &nbsp; $a_{max}=A\omega_0^2$</p>
 <p>Colgado: $k\,\Delta\ell=mg$ → el peso solo corre el equilibrio, $\omega_0$ no cambia.</p>
-<p>Serie: $\frac1{k_{eq}}=\frac1{k_1}+\frac1{k_2}$ &nbsp; Paralelo: $k_{eq}=k_1+k_2$ &nbsp; Trozo de largo $L/n$: $k'=nk$</p>
-<p>Péndulo ($\theta$ chico): $\omega_0=\sqrt{g/L}$, $\theta=\theta_{max}\cos(\omega_0t+\varphi_0)$, $v=L\dot\theta$</p>
+<p>Resortes en serie: $\frac1{k_{eq}}=\frac1{k_1}+\frac1{k_2}$ &nbsp; En paralelo: $k_{eq}=k_1+k_2$ &nbsp; Trozo de largo $L/n$: $k'=nk$</p>
+<p>Péndulo de largo $L$ (solo con $\theta$ chico): $\omega_0=\sqrt{g/L}$</p>
+<p>$\theta=\theta_{max}\cos(\omega_0t+\varphi_0)$ &nbsp; $v=L\dot\theta$</p>
 </div>
 
 <div class="sec osc"><h2>Amortiguado &nbsp;$F_v=-bv$</h2>
+<p class="usar"><b>Cuándo:</b> hay rozamiento y no hay fuerza externa. El caso sale de comparar $\gamma$ con $\omega_0$.</p>
+<p class="vars">$b$: constante de rozamiento; $\gamma$: coeficiente de amortiguamiento; $\omega_0$: frecuencia sin rozamiento; $\omega'$: frecuencia con rozamiento; $\tau$: tiempo de decaimiento de la energía; $Q$: factor de calidad.</p>
 <p>$\ddot x+2\gamma\dot x+\omega_0^2x=0$ &nbsp; $\gamma=\frac{b}{2m}$ &nbsp; raíces $r=-\gamma\pm\sqrt{\gamma^2-\omega_0^2}$</p>
-<h3>Sub ($\gamma&lt;\omega_0$) — único que oscila</h3>
+<h3>Subamortiguado ($\gamma&lt;\omega_0$): el único que oscila</h3>
 <p>$x=Ae^{-\gamma t}\cos(\omega' t+\varphi_0)$ &nbsp; $\omega'=\sqrt{\omega_0^2-\gamma^2}$, $T'=\frac{2\pi}{\omega'}$</p>
+<p>Si dan $x(t)$: el número del exponente es $\gamma$, y el que multiplica a $t$ en el coseno es $\omega'$. Entonces $\omega_0^2=\omega'^2+\gamma^2$.</p>
 <p>$A=\sqrt{x_0^2+\left(\frac{v_0+\gamma x_0}{\omega'}\right)^2}$ &nbsp; $\tg\varphi_0=-\frac{v_0+\gamma x_0}{x_0\,\omega'}$</p>
 <p>$v=-Ae^{-\gamma t}[\gamma\cos(\omega't+\varphi_0)+\omega'\sen(\omega't+\varphi_0)]$</p>
-<h3>Crítico ($\gamma=\omega_0$)</h3>
-<p>$x=(C_1+C_2t)e^{-\gamma t}$ &nbsp; $C_1=x_0$, $C_2=v_0+\gamma x_0$ <span class="chico">(vuelve lo más rápido)</span></p>
-<h3>Sobre ($\gamma&gt;\omega_0$)</h3>
-<p>$x=e^{-\gamma t}(C_1e^{\beta t}+C_2e^{-\beta t})$, $\beta=\sqrt{\gamma^2-\omega_0^2}$</p>
+<h3>Crítico ($\gamma=\omega_0$): vuelve lo más rápido, sin oscilar</h3>
+<p>$x=(C_1+C_2t)e^{-\gamma t}$ &nbsp; $C_1=x_0$, $C_2=v_0+\gamma x_0$</p>
+<h3>Sobreamortiguado ($\gamma&gt;\omega_0$): vuelve lento, sin oscilar</h3>
+<p>$x=e^{-\gamma t}(C_1e^{\beta t}+C_2e^{-\beta t})$, $\beta=\sqrt{\gamma^2-\omega_0^2}$ <span class="chico">(no es el $\beta$ de difracción)</span></p>
 <p>$C_1+C_2=x_0$ &nbsp; $(\beta-\gamma)C_1-(\beta+\gamma)C_2=v_0$</p>
-<h3>Energía y factor de calidad</h3>
+<h3>Energía y factor de calidad (poco rozamiento)</h3>
 <p>$E(t)\approx E_0e^{-2\gamma t}$ &nbsp; $\tau=\frac1{2\gamma}$ &nbsp; $Q=\omega_0\tau=\frac{\omega_0}{2\gamma}$</p>
 <div class="box">Por ciclo: $\frac{A(t+T')}{A(t)}=e^{-\gamma T'}$ &nbsp; $\frac{E(t+T')}{E(t)}=e^{-2\gamma T'}$<br>
 "Pierde X% de amplitud" → queda $(1-X)$: $e^{-\gamma T'}=1-X$<br>
 "Pierde X% de energía" → $e^{-2\gamma T'}=1-X$ &nbsp; ($n$ ciclos: $e^{-2\gamma nT'}$)<br>
 Si $Q\gg1$: $\omega'\approx\omega_0$, &nbsp; $\frac{\Delta E}{E}\big|_{ciclo}\approx\frac{2\pi}{Q}$</div>
-<p>$\omega'=\omega_0\sqrt{1-\frac1{4Q^2}}$ &nbsp; $\gamma T'=\frac{\pi}{\sqrt{Q^2-1/4}}$ &nbsp; $Q&gt;\frac12$ sub, $=\frac12$ crít, $&lt;\frac12$ sobre</p>
+<p>$\omega'=\omega_0\sqrt{1-\frac1{4Q^2}}$ &nbsp; $\gamma T'=\frac{\pi}{\sqrt{Q^2-1/4}}$ &nbsp; $Q&gt;\frac12$ sub, $=\frac12$ crít., $&lt;\frac12$ sobre</p>
 </div>
 
 <div class="sec osc"><h2>Forzado &nbsp;$F=F_0\cos\omega t$</h2>
+<p class="vars">$F_0$: amplitud de la fuerza; $\omega$: frecuencia de la fuerza; $x_{est}$: movimiento estacionario, oscila a $\omega$; $A(\omega)$: su amplitud; $\delta$: atraso de $x$ respecto de $F$; $\langle P\rangle$: potencia media.</p>
+<h3>Para cualquier $\omega$: las dos resonancias salen de reemplazar $\omega$ acá</h3>
 <p>$\ddot x+2\gamma\dot x+\omega_0^2x=\frac{F_0}{m}\cos\omega t$ &nbsp; $x=x_h+x_{est}$ ($x_h\to0$: transitorio)</p>
 <p>$x_{est}=A(\omega)\cos(\omega t-\delta)$ <span class="chico">(no depende de cond. iniciales)</span></p>
 <p>$$A(\omega)=\frac{F_0/m}{\sqrt{(\omega_0^2-\omega^2)^2+(2\gamma\omega)^2}}$$</p>
-<p>$\tg\delta=\frac{2\gamma\omega}{\omega_0^2-\omega^2}$, &nbsp; $\delta\in[0,\pi]$ (retraso de la respuesta)</p>
-<p>$A(0)=\frac{F_0}{k}$ &nbsp; $\omega_{RA}=\sqrt{\omega_0^2-2\gamma^2}$ &nbsp; $A_{max}=\frac{F_0/m}{2\gamma\sqrt{\omega_0^2-\gamma^2}}=\frac{F_0}{b\,\omega'}$</p>
+<p>$\tg\delta=\frac{2\gamma\omega}{\omega_0^2-\omega^2}$, &nbsp; $\delta\in[0,\pi]$</p>
+<p>$F$ va adelantada: si $x=A\cos(\omega t+\varphi)$, $F=F_0\cos(\omega t+\varphi+\delta)$</p>
 <p>$\langle P\rangle=\frac{F_0^2\gamma}{m}\frac{\omega^2}{(\omega_0^2-\omega^2)^2+(2\gamma\omega)^2}=\frac12 b\,\omega^2A^2$</p>
-<p>$\omega_{RP}=\omega_0$ &nbsp; $\langle P\rangle_{max}=\frac{F_0^2}{4m\gamma}=\frac{F_0^2}{2b}$ &nbsp; ($\delta=\frac\pi2$ en $\omega_0$)</p>
-<div class="box">Ancho: $\langle P\rangle=\frac12\langle P\rangle_{max}$ en $\omega_\pm=\sqrt{\omega_0^2+\gamma^2}\pm\gamma\approx\omega_0\pm\gamma$<br>
+<p>Fuerza constante ($\omega=0$): $A(0)=\frac{F_0}{k}$</p>
+<h3>Resonancia de potencia ("máxima potencia"): $\omega=\omega_{RP}=\omega_0$</h3>
+<p>$A(\omega_0)=\frac{F_0/m}{2\gamma\omega_0}=\frac{F_0}{b\,\omega_0}$ &nbsp; $\delta=\frac\pi2$ &nbsp; $\langle P\rangle_{max}=\frac{F_0^2}{4m\gamma}=\frac{F_0^2}{2b}$</p>
+<p>$F$ en fase con $v$: si $x=A\cos(\omega_0t+\varphi)$, $F=F_0\cos(\omega_0t+\varphi+\frac\pi2)$</p>
+<div class="box">Ancho de resonancia: $\langle P\rangle=\frac12\langle P\rangle_{max}$ en $\omega_\pm=\sqrt{\omega_0^2+\gamma^2}\pm\gamma\approx\omega_0\pm\gamma$<br>
 $\Delta\omega=\omega_+-\omega_-=2\gamma=\frac{\omega_0}{Q}$ &nbsp; (exacto)</div>
-<p>Si cesa la fuerza en $t_0$: sigue como amortiguado libre con $x_0$, $v_0$ del estacionario en ese instante.</p>
+<h3>Resonancia de amplitud ("máxima amplitud"): $\omega=\omega_{RA}$</h3>
+<p>$\omega_{RA}=\sqrt{\omega_0^2-2\gamma^2}$ &nbsp; $A_{max}=\frac{F_0/m}{2\gamma\sqrt{\omega_0^2-\gamma^2}}=\frac{F_0}{b\,\omega'}$</p>
+<p>Acá $\delta&lt;\frac\pi2$ y $F$ no está en fase con $v$: para $\delta$, usar $\tg\delta$ con $\omega_{RA}$.</p>
+<h3>Cambio de régimen: si cesa la fuerza en $t_0$</h3>
+<p>$x$ y $v$ no saltan; $m$, $k$ y $\gamma$ son los mismos. Sigue como amortiguado libre con $x_0$, $v_0$ del estacionario en $t_0$.</p>
+<p>Si cesa en un máximo de elongación: $A_{est}=x(t_0)$, no el coeficiente de la libre. "Máximo de elongación" significa $x=A$; no es $A_{max}$.</p>
 </div>
 
 <div class="sec ond"><h2>Ondas propagantes</h2>
+<p class="vars">$y$: desplazamiento de cada punto; $k$: número de onda (no es el del resorte); $\omega$: frecuencia angular; $\lambda$: longitud de onda; $v$: velocidad de propagación; $F$: tensión de la cuerda; $\mu$: masa por unidad de largo; $u_K,u_U,u_E$: energía por unidad de largo (cinética, elástica, total); $P$: potencia; $I$: intensidad; $S$: sección.</p>
 <p>$\frac{\partial^2y}{\partial x^2}=\frac1{v^2}\frac{\partial^2y}{\partial t^2}$ &nbsp; $y=f(x\mp vt)$: $-$ va a $+x$, $+$ va a $-x$</p>
 <p>$y=A\cos(kx\mp\omega t+\varphi)$ &nbsp; $k=\frac{2\pi}{\lambda}$ &nbsp; $\omega=2\pi f=kv$</p>
-<p>$v=\lambda f=\frac{\omega}{k}=\sqrt{F/\mu}$ &nbsp; $\mu=\frac mL$ &nbsp; $Fk^2=\mu\omega^2$</p>
-<p>$v_y=\frac{\partial y}{\partial t}$ (velocidad del punto $\neq v$) &nbsp; $v_{y,max}=A\omega$</p>
-<p>$u_K=\frac12\mu\left(\frac{\partial y}{\partial t}\right)^2$ &nbsp; $u_U=\frac12F\left(\frac{\partial y}{\partial x}\right)^2$</p>
-<p>Propagante: $u_K=u_U=\frac12\mu\omega^2A^2\sen^2(kx\mp\omega t+\varphi)$</p>
+<p>$v=\lambda f=\frac{\omega}{k}=\sqrt{F/\mu}$ &nbsp; $\mu=\frac mL$ &nbsp; Tensión: $F=\mu v^2$, &nbsp; $Fk^2=\mu\omega^2$</p>
+<p>$v_y=\frac{\partial y}{\partial t}$ (velocidad del punto, $\neq v$) &nbsp; $v_{y,max}=A\omega$</p>
+<p>$u_K=\frac12\mu\left(\frac{\partial y}{\partial t}\right)^2$ &nbsp; $u_U=\frac12F\left(\frac{\partial y}{\partial x}\right)^2$ &nbsp; <span class="chico">(propagantes y estacionarias)</span></p>
+<p>Solo propagante: $u_K=u_U=\frac12\mu\omega^2A^2\sen^2(kx\mp\omega t+\varphi)$</p>
 <p>$u_E=\mu\omega^2A^2\sen^2(\ldots)$ &nbsp; $\langle u_E\rangle=\frac12\mu\omega^2A^2$ &nbsp; $E_{tramo}=\int u\,dx$</p>
 <p>$P=u_Ev$ &nbsp; $\langle P\rangle=\frac12\mu\omega^2A^2v$ &nbsp; $I=\frac{\langle P\rangle}{S}$</p>
 <p>Reflexión en extremo fijo: se invierte (desfase $\pi$); en extremo libre: no.</p>
 </div>
 
 <div class="sec ond"><h2>Ondas estacionarias</h2>
-<p>$y=A\cos(kx+\varphi_x)\cos(\omega t+\varphi_t)$ &nbsp; ($A=2A'$ de cada propagante)</p>
+<p class="vars">Nodo: punto que no se mueve. Antinodo: punto que oscila con la máxima amplitud. $A$: amplitud en un antinodo ($A=2A'$, con $A'$ de cada propagante); $n=1,2,\ldots$: número de modo; $x$: desde el extremo $x=0$, que es el primero en la tabla; $E$: energía mecánica de la cuerda.</p>
+<p>$y=A\cos(kx+\varphi_x)\cos(\omega t+\varphi_t)$</p>
 <table>
-<tr><th>Extremos</th><th>Condición</th><th>$f_n$</th><th>$y(x,t)$</th></tr>
-<tr><td>fijo–fijo</td><td>$L=n\frac\lambda2$</td><td>$n\frac{v}{2L}$, $n=1,2,\ldots$</td><td>$A\sen(kx)\cos(\omega t+\varphi)$</td></tr>
-<tr><td>libre–libre</td><td>$L=n\frac\lambda2$</td><td>$n\frac{v}{2L}$</td><td>$A\cos(kx)\cos(\omega t+\varphi)$</td></tr>
-<tr><td>fijo–libre</td><td>$L=(2n-1)\frac\lambda4$</td><td>$(2n-1)\frac{v}{4L}$</td><td>$A\sen(kx)\cos(\omega t+\varphi)$</td></tr>
+<tr><th>Extremos</th><th>Condición</th><th>$f_n$</th><th>$y(x,t)$ = esto $\cdot\cos(\omega t+\varphi)$</th></tr>
+<tr><td>fijo–fijo</td><td class="nb">$L=n\frac\lambda2$</td><td class="nb">$n\frac{v}{2L}$</td><td class="nb">$A\sen(kx)$</td></tr>
+<tr><td>libre–libre</td><td class="nb">$L=n\frac\lambda2$</td><td class="nb">$n\frac{v}{2L}$</td><td class="nb">$A\cos(kx)$</td></tr>
+<tr><td>fijo–libre</td><td class="nb">$L=(2n-1)\frac\lambda4$</td><td class="nb">$(2n-1)\frac{v}{4L}$</td><td class="nb">$A\sen(kx)$</td></tr>
+<tr><td>libre–fijo</td><td class="nb">$L=(2n-1)\frac\lambda4$</td><td class="nb">$(2n-1)\frac{v}{4L}$</td><td class="nb">$A\cos(kx)$</td></tr>
 </table>
-<p>Fijo = nodo, libre = antinodo. Nodo–nodo: $\frac\lambda2$; nodo–antinodo: $\frac\lambda4$.</p>
-<p>fijo–fijo armónico $n$: $n+1$ nodos totales ($n-1$ internos). fijo–libre modo $2n-1$: $n$ nodos (contando el fijo).</p>
+<div class="box"><b>Identificar el modelo:</b> con armónicos consecutivos, siempre $\Delta f=\frac{v}{2L}$.<br>
+$\frac f{\Delta f}$ termina en ,5: un extremo fijo y uno libre. Para saber cuál es cuál, probar los dos casos y descartar el que ponga un nodo donde hay movimiento.<br>
+$\frac f{\Delta f}$ entero: fijo–fijo o libre–libre. Las frecuencias no alcanzan: hace falta un dato de un punto o un extremo. Sin ese dato, "no es posible determinarlo".</div>
+<p>Fijo = nodo, libre = antinodo. Nodo–nodo: $\frac\lambda2$; nodo–antinodo: $\frac\lambda4$. Un punto con $u_K\neq0$ no es nodo.</p>
+<p>fijo–fijo, modo $n$: $n+1$ nodos totales ($n-1$ internos).</p>
+<p>fijo–libre, modo $2n-1$: $n$ nodos (contando el fijo).</p>
 <p>Con $y=A\sen(kx)\cos(\omega t+\varphi)$:</p>
 <p>$u_K=\frac12\mu\omega^2A^2\sen^2(kx)\sen^2(\omega t+\varphi)$</p>
-<p>$u_U=\frac12\mu\omega^2A^2\cos^2(kx)\cos^2(\omega t+\varphi)$ <span class="chico">(con $\cos kx$: intercambiar $\sen\leftrightarrow\cos$ en $x$)</span></p>
+<p>$u_U=\frac12\mu\omega^2A^2\cos^2(kx)\cos^2(\omega t+\varphi)$</p>
+<p>Con $y=A\cos(kx)\cos(\omega t+\varphi)$: intercambiar $\sen\leftrightarrow\cos$ en $x$.</p>
 <div class="box">$\int\sen^2(kx)dx=\frac x2-\frac{\sen(2kx)}{4k}$ &nbsp; $\int\cos^2(kx)dx=\frac x2+\frac{\sen(2kx)}{4k}$<br>
-Si $\Delta x=$ múltiplo de $\frac\lambda4$ entre nodos/antinodos: $\int\sen^2=\int\cos^2=\frac{\Delta x}2$<br>
+Si $\Delta x=$ múltiplo de $\frac\lambda4$ entre nodos/antinodos: $\int\sen^2=\int\cos^2=\frac{\Delta x}2$ y<br>
 $E_{tramo}=\frac14\mu\omega^2A^2\Delta x$ (cte) &nbsp; $\langle u_K\rangle=\langle u_U\rangle$, $\langle P\rangle=0$</div>
+<p>Toda la cuerda: $E=\frac14\mu\omega^2A^2L$, constante sin pérdidas, en cualquier $t$.</p>
+<p>$E_K(t)=E\sen^2(\omega t+\varphi)$ &nbsp; $E_U(t)=E\cos^2(\omega t+\varphi)$. Si $E_K$ es máx. en $t=0$: $\varphi=\frac\pi2$, $E_K=E\cos^2\omega t$.</p>
 <p>Cuerda horizontal ($\cos(\omega t+\varphi)=0$): todo $u_K$. Máx. elongación: todo $u_U$.</p>
-<p>Graficar $u(t)$ en un punto: $\sen^2$/$\cos^2$ de período $T/2$.</p>
+<p>Graficar $E_K(t)$ o $u(t)$: período $T/2$, con ceros y máximos alternados cada $T/4$.</p>
 </div>
 
 <div class="sec ext"><h2>Matemática útil</h2>
-<p>$\cos(a\pm b)=\cos a\cos b\mp\sen a\sen b$ &nbsp; $\sen(a\pm b)=\sen a\cos b\pm\cos a\sen b$</p>
+<p>$\cos(a\pm b)=\cos a\cos b\mp\sen a\sen b$</p>
+<p>$\sen(a\pm b)=\sen a\cos b\pm\cos a\sen b$</p>
 <p>$\cos^2a=\frac{1+\cos2a}2$ &nbsp; $\sen^2a=\frac{1-\cos2a}2$ &nbsp; $\langle\sen^2\rangle=\langle\cos^2\rangle=\frac12$</p>
+<p>$-\sen a=\cos(a+\frac\pi2)$</p>
 <p>$\sen x=0\Rightarrow x=k\pi$; $\cos x=0\Rightarrow x=\frac\pi2+k\pi$; $\arctg$ tiene período $\pi$</p>
-<p>Aprox. paraxial: $\sen\theta\approx\tg\theta\approx\theta$, $y=D\tg\theta$</p>
+<p>Posición en la pantalla: $y=D\tg\theta$ siempre. Solo con $\theta$ chico: $\sen\theta\approx\tg\theta\approx\theta$.</p>
 </div>
 
 </div>
@@ -87,66 +115,92 @@ $E_{tramo}=\frac14\mu\omega^2A^2\Delta x$ (cte) &nbsp; $\langle u_K\rangle=\lang
 <div class="page" style="--cols:2;--fs:8.3pt">
 
 <div class="sec geo"><h2>Óptica geométrica</h2>
+<p class="vars">$n$: índice de refracción; $c$: velocidad de la luz; $\lambda_0$: longitud de onda en el vacío; $\theta$: ángulo respecto de la normal; $s,s'$: posición del objeto y de la imagen; $f'$: distancia focal imagen; $f$: focal objeto; $y,y'$: altura del objeto y de la imagen; $A$: aumento; $R$: radio de curvatura; $\Phi$: potencia; $n_L$: índice de la lente; $D$: distancia entre elementos.</p>
 <p>$n=\frac cv$, $c=3\cdot10^8\,\text{m/s}$ &nbsp; $\lambda=\frac{\lambda_0}n$ ($f$ no cambia) &nbsp; $\theta_i=\theta_r$</p>
 <p>Snell: $n\sen\theta=n'\sen\theta'$ &nbsp; $n'&gt;n$ se acerca a la normal</p>
-<div class="box">Ángulo límite (solo si $n&gt;n'$): $\sen\theta_L=\frac{n'}{n}$; si $\theta&gt;\theta_L$ reflexión total.<br>
+<div class="box"><b>Reflexión total</b> (solo si $n&gt;n'$): $\sen\theta_L=\frac{n'}{n}$; si $\theta&gt;\theta_L$ no sale luz.<br>
 Fuente a profundidad $h$: disco iluminado $r=h\tg\theta_L$, fracción $=\frac{\pi r^2}{\text{área}}$.<br>
-Cubo con foco en el centro: $h=\frac a2$ en cada una de las 6 caras. Si $n&lt;n'$: sale todo (100%).</div>
-<h3>Convención</h3>
-<p>Origen en el vértice; $+$ en el sentido de la luz incidente. $R&gt;0$ si el centro está del lado $+$. Objeto real $s&lt;0$.</p>
-<h3>Dioptra</h3>
+Cubo con foco en el centro: $h=\frac a2$ en cada una de las 6 caras.<br>
+Si $n&lt;n'$, sale toda la luz (100%).</div>
+<h3>Convención de signos</h3>
+<p>Origen en el vértice de cada elemento; $+$ en el sentido de la luz incidente. $R&gt;0$ si el centro está del lado $+$.</p>
+<table>
+<tr><td>$s&lt;0$: objeto real</td><td>$s&gt;0$: objeto virtual (los rayos venían hacia ese punto)</td></tr>
+<tr><td>$s'&gt;0$: imagen real</td><td>$s'&lt;0$: imagen virtual, no se proyecta</td></tr>
+<tr><td>$A&lt;0$: invertida</td><td>$A&gt;0$: derecha</td></tr>
+</table>
+<p>Una lente con objeto real: imagen en pantalla = real, entonces $A&lt;0$. "El doble" solo da $|A|=2$; sin más datos, probar $A=2$ y $A=-2$.</p>
+<h3>Dioptra: una sola superficie entre dos medios</h3>
 <p>$\frac{n'}{s'}-\frac{n}{s}=\frac{n'-n}{R}=\Phi$ &nbsp; $f'=\frac{n'R}{n'-n}$, $f=-\frac{nR}{n'-n}$ &nbsp; $A=\frac{y'}y=\frac{ns'}{n's}$</p>
-<p>Plana: $\frac{n'}{s'}=\frac{n}{s}$ &nbsp; $s'&gt;0$ imagen real; $A&gt;0$ derecha</p>
-<p>Sistema: $s_2=s_1'-D$, $y_2=y_1'$, $A=A_1A_2\cdots$</p>
-<h3>Lente delgada</h3>
-<p>$\frac{n'}{s'}-\frac ns=\frac{n_L-n}{R_1}+\frac{n'-n_L}{R_2}$ &nbsp; en aire: $\frac1{s'}-\frac1s=(n_L-1)\left(\frac1{R_1}-\frac1{R_2}\right)=\frac1{f'}$</p>
-<p>$f=-f'$ &nbsp; $A=\frac{s'}{s}$ &nbsp; convergente $f'&gt;0$, divergente $f'&lt;0$ &nbsp; biconvexa sim.: $R_1=r$, $R_2=-r$</p>
+<p>Plana: $\frac{n'}{s'}=\frac{n}{s}$</p>
+<h3>Lente delgada: elegir según lo que la rodea</h3>
+<p>En aire: $\frac1{s'}-\frac1s=(n_L-1)\left(\frac1{R_1}-\frac1{R_2}\right)=\frac1{f'}$</p>
+<p>Mismo medio $n$ a los dos lados: $\frac1{s'}-\frac1s=\left(\frac{n_L}n-1\right)\left(\frac1{R_1}-\frac1{R_2}\right)=\frac1{f'}$. Si $n_L&lt;n$ se invierte: la bicóncava converge.</p>
+<p>Medios distintos: $\frac{n'}{s'}-\frac ns=\frac{n_L-n}{R_1}+\frac{n'-n_L}{R_2}$</p>
+<p>$f=-f'$ &nbsp; $A=\frac{s'}{s}$ &nbsp; convergente $f'&gt;0$, divergente $f'&lt;0$. Si dan la focal sin signo, el signo sale del tipo de lente.</p>
+<p>Caras iguales de radio $r$: biconvexa $R_1=r$, $R_2=-r$; bicóncava $R_1=-r$, $R_2=r$.</p>
 <p>Conv. + objeto real fuera del foco → imagen real. Div. + objeto real → siempre virtual.</p>
-<h3>Espejo</h3>
+<h3>Espejo: otra fórmula y otro signo de $A$</h3>
 <p>$\frac1{s'}+\frac1s=\frac2R=\frac1f$ &nbsp; $f=\frac R2$ &nbsp; $A=-\frac{s'}{s}$ &nbsp; cóncavo $R&lt;0$, convexo $R&gt;0$</p>
 <p>Imagen real: $s'&lt;0$ (delante). Detrás del espejo: virtual ($s'&gt;0$) / objeto virtual ($s&gt;0$).</p>
-<div class="box">Haces salen paralelos ⇔ el objeto de ese elemento está en su foco.<br>
+<h3>Dos o más elementos</h3>
+<p>La imagen del 1º es el objeto del 2º: $s_2=s_1'-D$, $y_2=y_1'$, $A=A_1A_2\cdots$. Si cae antes del 2º, $s_2&lt;0$; si cae después, $s_2&gt;0$ y esa imagen ya no se forma.</p>
+<div class="box">Salen paralelos: $\frac1{s'}=0$ ⇔ el objeto de ese elemento está en su foco. Divergente: objeto virtual en $s=f=-f'&gt;0$.<br>
 Imagen en el mismo lugar del objeto: la luz vuelve sobre sí misma (al espejo le llega desde su centro, $s=R$) o el sistema completo da $s'_{final}$ = posición del objeto.<br>
 Después del espejo la luz vuelve: tomar $+$ hacia la izquierda para la 2ª pasada por la lente.</div>
 </div>
 
 <div class="sec fis"><h2>Interferencia</h2>
+<p class="vars">$I$: intensidad; $\Delta\phi$: diferencia de fase; $CO=n\,\ell$: camino óptico; $\Delta CO$: su diferencia entre dos rayos; $m$: orden; $e$: espesor; $\Delta\varphi_{ref}$: fase por reflexión.</p>
 <p>$I=I_1+I_2+2\sqrt{I_1I_2}\cos\Delta\phi$ &nbsp; $I_1=I_2=I_0$: $I=4I_0\cos^2\frac{\Delta\phi}2$ &nbsp; $I=\frac{nc\varepsilon_0}2A^2$</p>
-<p>$\Delta\phi=\frac{2\pi}{\lambda_0}\Delta CO+\Delta\varphi_{ref}$ &nbsp; $CO=n\,\ell$</p>
-<p>Máx: $\Delta\phi=2m\pi$ ($\Delta CO=m\lambda_0$). Mín: $\Delta\phi=(2m+1)\pi$ ($\Delta CO=(m+\frac12)\lambda_0$).</p>
+<p>$\Delta\phi=\frac{2\pi}{\lambda_0}\Delta CO+\Delta\varphi_{ref}$</p>
+<p>Máx: $\Delta\phi=2m\pi$ ($\Delta CO=m\lambda_0$)</p>
+<p>Mín: $\Delta\phi=(2m+1)\pi$ ($\Delta CO=(m+\frac12)\lambda_0$)</p>
 <p>Reflexión sobre medio de mayor $n$: $+\pi$; sobre menor: $0$.</p>
 <h3>Lámina delgada (incidencia normal)</h3>
 <p>$\Delta\phi=\frac{2\pi}{\lambda_0}2n e+\Delta\varphi_{ref}$ &nbsp; $\Delta\varphi_{ref}=\pi$ si se invierte uno solo de los dos haces, $0$ si ambos o ninguno</p>
 <p>Ej. aceite sobre vidrio ($n_{aire}&lt;n_a&lt;n_v$): ambos invierten → reflejada se anula si $2n_ae=(m+\frac12)\lambda_0$, refuerza si $2n_ae=m\lambda_0$. Luz blanca: probar $m$ con $400\le\lambda\le700$ nm.</p>
-<p>Cuña: $e=\alpha x$, franjas cada $\Delta x=\frac{\lambda_0}{2n\alpha}$ &nbsp; Newton: $e=\frac{r^2}{2R}$</p>
+<p>Cuña de ángulo $\alpha$: $e=\alpha x$, franjas cada $\Delta x=\frac{\lambda_0}{2n\alpha}$ &nbsp; Newton: $e=\frac{r^2}{2R}$</p>
 <h3>Doble rendija (Young)</h3>
-<p>$\Delta CO=n\,d\sen\theta$ &nbsp; máx: $n d\sen\theta=m\lambda_0$ &nbsp; $y=D\tg\theta$ &nbsp; $\Delta y\approx\frac{\lambda_0D}{nd}$</p>
+<p class="vars">$d$: separación entre rendijas; $a$: ancho de cada una; $\theta$: ángulo de salida ($\theta=0$ en el centro); $\theta_i$: ángulo de incidencia; $D$: distancia a la pantalla; $y$: posición en la pantalla; $\Delta y$: separación entre franjas; $n$: medio placa–pantalla; $n_i$: medio antes de la placa; $n_l$: índice de la lámina.</p>
+<p>$\Delta CO=n\,d\sen\theta$ &nbsp; máx: $n d\sen\theta=m\lambda_0$ &nbsp; $y=D\tg\theta$ &nbsp; $\theta$ chico: $\Delta y\approx\frac{\lambda_0D}{nd}$</p>
 <div class="box">Lámina ($e$, $n_l$) en un haz, medio $n$: suma $e(n_l-n)$ a ese haz.<br>
 Corrimiento de $N$ franjas: $|\Sigma e(n_l-n)|=N\lambda_0$; el patrón va hacia la lámina. Gota de aire de diámetro $e'$: suma $e'(1-n)$ (resta).<br>
-Oblicua: $\Delta CO=d(n\sen\theta-n_i\sen\theta_i)+\Sigma e(n_l-n)$ &nbsp; sin láminas el orden 0 sigue al haz ($n\sen\theta=n_i\sen\theta_i$).<br>
+Oblicua: el rayo que llega después a su rendija recorre $n_id\sen\theta_i$ de más.<br>
+$\Delta CO=d(n\sen\theta-n_i\sen\theta_i)+\Sigma e(n_l-n)$ &nbsp; sin láminas el orden 0 sigue al haz ($n\sen\theta=n_i\sen\theta_i$).<br>
+Orden $m$ en el centro, sin láminas: $n_id\sen\theta_i=m\lambda_0$.<br>
 Orden 0 al centro: $n_id\sen\theta_i=\Sigma e(n_l-n)$ → el haz llega primero a la rendija con lámina.<br>
-Líquido $n'$ entre placa y pantalla: cambia $n$ en $d\sen\theta$, en $\beta$ y en $e(n_l-n')$.</div>
+Una lámina en cada rendija: restar, $\Sigma=e_1(n_1-n)-e_2(n_2-n)$. El haz llega primero a la de la lámina que agrega más; según rendija e inclinación puede haber 2 soluciones.<br>
+Líquido $n'$ entre placa y pantalla: cambia $n$ en $d\sen\theta$, en $\beta$ y en <span class="nb">$e(n_l-n')$</span>.</div>
 </div>
 
 <div class="sec fis"><h2>Difracción</h2>
-<p>Una rendija: $\beta=\frac{\pi a}{\lambda_0}(n\sen\theta-n_i\sen\theta_i)$ &nbsp; $I=I_0\left(\frac{\sen\beta}\beta\right)^2$</p>
-<p>Mín: $\beta=p\pi$ ($a\,n\sen\theta=p\lambda_0$, $p\neq0$) &nbsp; campana central: $2\frac{\lambda}{a}$ de ancho angular</p>
+<p class="vars">$\beta$: mitad de la diferencia de fase entre los bordes de una rendija, usa $a$; $\gamma$: mitad de la diferencia de fase entre las dos rendijas, usa $d$; $I_0$: intensidad de cada rendija en dirección normal; $p$: entero no nulo.</p>
+<p>$\beta$ (para una o dos rendijas): $\beta=\frac{\pi a}{\lambda_0}(n\sen\theta-n_i\sen\theta_i)$</p>
+<p>Una rendija: $I=I_0\left(\frac{\sen\beta}\beta\right)^2$</p>
+<p>Dos rendijas: $I=4I_0\cos^2\gamma\left(\frac{\sen\beta}{\beta}\right)^2$, $\gamma=\frac{\Delta\phi}2=\frac\pi{\lambda_0}\Delta CO$ &nbsp; (mismo $\beta$)</p>
+<p>Mín. de difracción: $\beta=p\pi$, o sea $a(n\sen\theta-n_i\sen\theta_i)=p\lambda_0$; ahí $I=0$ aunque haya máx. de interferencia. Campana central (normal): $2\frac{\lambda}{a}$ de ancho angular.</p>
 <p>Secundarios: $\beta\approx1{,}43\pi$ ($0{,}047I_0$), $2{,}46\pi$ ($0{,}016I_0$). Las láminas no mueven la campana; la oblicuidad sí.</p>
-<p>Dos rendijas: $I=4I_0\cos^2\gamma\left(\frac{\sen\beta}{\beta}\right)^2$, $\gamma=\frac{\Delta\phi}2=\frac\pi{\lambda_0}\Delta CO$</p>
-<p>Máx. interf. $\gamma=m\pi$, mín. $\gamma=(m+\frac12)\pi$. Sin láminas: $\beta=\gamma\frac ad$.</p>
+<p>Máx. interf.: $\gamma=m\pi$, entonces $\cos^2\gamma=1$. Mín.: $\gamma=(m+\frac12)\pi$. Sin láminas: $\beta=\gamma\frac ad$.</p>
 <div class="box">Faltantes: $m=p\frac da$ entero. Si $\frac da$ entero: $2\frac da-1$ máx. en la campana central y $\frac da-1$ en cada secundaria.</div>
 <p>Babinet: hilo/obstáculo de ancho $a$ ≡ rendija de ancho $a$ (fuera del centro).</p>
-<p>Rayleigh: rendija $\theta_{min}=\frac{\lambda}{a}$; circular $\theta_{min}=1{,}22\frac{\lambda}{D}$; resueltas si $\theta\ge\theta_{min}$, $\theta\approx\frac dL$.</p>
+<p>Rayleigh: rendija $\theta_{min}=\frac{\lambda}{a}$; abertura circular de diámetro $D$: $\theta_{min}=1{,}22\frac{\lambda}{D}$</p>
+<p>Resueltas si $\theta\ge\theta_{min}$, con $\theta\approx\frac dL$ ($d$: separación entre objetos; $L$: distancia a ellos).</p>
 </div>
 
 <div class="sec red"><h2>Redes de difracción ($N$ rendijas)</h2>
+<p class="vars">$d$: separación entre ranuras; $a$: ancho de ranura; $K=\frac1d$: ranuras por unidad de largo; $W$: ancho iluminado; $N$: ranuras iluminadas; $m$: orden; $\Delta\lambda$: diferencia entre las dos $\lambda$; $R$: poder resolvente.</p>
+<div class="box"><b>Pasos:</b> 1) $N=W\cdot K=\frac Wd$, truncar.<br>
+2) Faltantes: $m=p\frac da$, $p\neq0$. El $m=0$ siempre está.<br>
+3) Se resuelven si $mN\ge\frac{\lambda}{\Delta\lambda}$: redondear $m$ hacia arriba; si ese $m$ falta, va el siguiente.<br>
+4) Posición: $d\sen\theta=m\lambda$ (o $\sen\theta=m\lambda K$) e $y=D\tg\theta$. Existe si $\sen\theta&lt;1$: $m\le\frac d\lambda$.<br>
+5) Detector o pantalla: $\tg\theta_{max}=\frac{\text{ancho}/2}{D}$. Centrada: total $=2\times$(un lado)$+1$. Corrida o con zona rota: contar cada lado.<br>
+6) Líneas con dos $\lambda$: $m=0$ da 1; orden no resuelto, 1; orden resuelto, 2.</div>
 <p>$I=I_0\left(\frac{\sen N\gamma}{\sen\gamma}\right)^2\left(\frac{\sen\beta}\beta\right)^2$ &nbsp; $\gamma=\frac{\pi}{\lambda_0}n d\sen\theta$ &nbsp; $I_{ppal}=N^2I_0$</p>
-<p>Ec. de la red: $d\sen\theta=m\lambda$ → $\sen\theta=m\lambda K$, $K=\frac1d$ &nbsp; $N=W\cdot K$ ($W$ = ancho iluminado)</p>
 <p>Entre dos ppales: $N-1$ mínimos, $N-2$ secundarios. Mín: $\gamma=\frac{q}{N}\pi$, $q$ no múltiplo de $N$.</p>
 <p>Ancho angular del máx.: $\delta\theta=\frac{2\lambda}{Nd\cos\theta}$</p>
-<div class="box"><b>¿Cuántas líneas se ven?</b> Limitan: (i) $\sen\theta&lt;1$ → $m\le\frac d\lambda$, o la pantalla: $\tg\theta_{max}=\frac{\text{ancho}/2}{D}$; (ii) faltantes $m=p\frac da$; (iii) resolución $mN\ge\frac{\lambda}{\Delta\lambda}$. Total $=2\times$(un lado)$+1$.</div>
 <p>Resolución cromática: $R=\frac{\lambda}{\Delta\lambda_{min}}=mN$ &nbsp; resueltas si $\Delta\lambda\ge\frac{\lambda}{mN}$</p>
-<p>Luz blanca (400–700 nm): órdenes $m$ y $m+1$ se solapan si $700m&gt;400(m+1)$ → 1º y 2º no, 2º y 3º sí. Solapamiento: de $y_{m+1}(400)$ a $y_m(700)$.</p>
+<p>Luz blanca (400–700 nm): órdenes $m$ y $m+1$ se solapan si $700m&gt;400(m+1)$ → 1º y 2º no, 2º y 3º sí. Solapamiento: de <span class="nb">$y_{m+1}(400)$</span> a <span class="nb">$y_m(700)$</span></p>
 <p>Ranuras tapadas: queda una red con las abiertas (nuevo $N$ y/o $d$).</p>
 </div>
 
