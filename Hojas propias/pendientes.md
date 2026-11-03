@@ -10,5 +10,5 @@ Todos los arreglos anotados hasta el 1/11/2026 ya están en las dos hojas.
 
 ## Para más adelante
 
-- [ ] El usuario imprime en A4, a tamaño real, la hoja de fórmulas (8,35 pt) y las de ejercicios: v4 (23, 6,09 pt), v5 (21, 6,43 pt), v6 (23, 6,07 pt), v6 con fórmulas grandes (23, texto 5,86 pt y fórmulas 7,03 pt) y v7 (24, 5,92 pt). Con eso elige cuál lleva. Si la letra no se lee bien, recortar las descripciones de cada ejercicio.
+- [ ] El usuario imprime en A4, a tamaño real, la hoja de fórmulas (8,01 pt) y las de ejercicios: v4 (23, 6,09 pt), v5 (21, 6,43 pt), v6 (23, 6,07 pt), v6 con fórmulas grandes (23, texto 5,86 pt y fórmulas 7,03 pt) y v7 (24, 5,92 pt). Con eso elige cuál lleva. Si la letra no se lee bien, recortar las descripciones de cada ejercicio.
 - [ ] Generar las manuscritas, solo cuando el usuario lo pida, más cerca del examen. `Formulas - mi letra.pdf` está desactualizada.

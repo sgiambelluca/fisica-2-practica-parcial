@@ -70,6 +70,7 @@ $\Delta\omega=\omega_+-\omega_-=2\gamma=\frac{\omega_0}{Q}$ &nbsp; (exacto)</div
 <p>$u_E=\mu\omega^2A^2\sen^2(\ldots)$ &nbsp; $\langle u_E\rangle=\frac12\mu\omega^2A^2$ &nbsp; $E_{tramo}=\int u\,dx$</p>
 <p>$P=u_Ev$ &nbsp; $\langle P\rangle=\frac12\mu\omega^2A^2v$ &nbsp; $I=\frac{\langle P\rangle}{S}$</p>
 <p>Reflexión en extremo fijo: se invierte (desfase $\pi$); en extremo libre: no.</p>
+<p>¿Propagante o estacionaria? En una estacionaria todos los puntos pasan juntos por el equilibrio: si dos puntos tienen $y$ de distinto signo, sus $v_y$ también. Con $y$ de distinto signo y $v_y$ del mismo signo, es propagante.</p>
 </div>
 
 <div class="sec ond"><h2>Ondas estacionarias</h2>
@@ -86,7 +87,7 @@ $\Delta\omega=\omega_+-\omega_-=2\gamma=\frac{\omega_0}{Q}$ &nbsp; (exacto)</div
 $\frac f{\Delta f}$ termina en ,5: un extremo fijo y uno libre. Para saber cuál es cuál, probar los dos casos y descartar el que ponga un nodo donde hay movimiento.<br>
 $\frac f{\Delta f}$ entero: fijo–fijo o libre–libre. Las frecuencias no alcanzan: hace falta un dato de un punto o un extremo. Sin ese dato, "no es posible determinarlo".</div>
 <p>Fijo = nodo, libre = antinodo. Nodo–nodo: $\frac\lambda2$; nodo–antinodo: $\frac\lambda4$. Un punto con $u_K\neq0$ no es nodo.</p>
-<p>fijo–fijo, modo $n$: $n+1$ nodos totales ($n-1$ internos).</p>
+<p>fijo–fijo, modo $n$: $n+1$ nodos totales ($n-1$ internos). libre–libre, modo $n$: $n$ nodos.</p>
 <p>fijo–libre, modo $2n-1$: $n$ nodos (contando el fijo).</p>
 <p>Con $y=A\sen(kx)\cos(\omega t+\varphi)$:</p>
 <p>$u_K=\frac12\mu\omega^2A^2\sen^2(kx)\sen^2(\omega t+\varphi)$</p>
@@ -121,7 +122,8 @@ $E_{tramo}=\frac14\mu\omega^2A^2\Delta x$ (cte) &nbsp; $\langle u_K\rangle=\lang
 <div class="box"><b>Reflexión total</b> (solo si $n&gt;n'$): $\sen\theta_L=\frac{n'}{n}$; si $\theta&gt;\theta_L$ no sale luz.<br>
 Fuente a profundidad $h$: disco iluminado $r=h\tg\theta_L$, fracción $=\frac{\pi r^2}{\text{área}}$.<br>
 Cubo con foco en el centro: $h=\frac a2$ en cada una de las 6 caras.<br>
-Si $n&lt;n'$, sale toda la luz (100%).</div>
+Si $n&lt;n'$, sale toda la luz (100%).<br>
+Rayo suelto: seguirlo cara por cara y sacar con geometría la incidencia en la cara que importa. Espejo inclinado $\phi$: desvía el rayo $2\phi$. Rayo paralelo a una cara que forma $\alpha$ con otra: incidencia $90°-\alpha$.</div>
 <h3>Convención de signos</h3>
 <p>Origen en el vértice de cada elemento; $+$ en el sentido de la luz incidente. $R&gt;0$ si el centro está del lado $+$.</p>
 <table>
@@ -140,9 +142,11 @@ Si $n&lt;n'$, sale toda la luz (100%).</div>
 <p>$f=-f'$ &nbsp; $A=\frac{s'}{s}$ &nbsp; convergente $f'&gt;0$, divergente $f'&lt;0$. Si dan la focal sin signo, el signo sale del tipo de lente.</p>
 <p>Caras iguales de radio $r$: biconvexa $R_1=r$, $R_2=-r$; bicóncava $R_1=-r$, $R_2=r$.</p>
 <p>Conv. + objeto real fuera del foco → imagen real. Div. + objeto real → siempre virtual.</p>
+<p>Objeto en el infinito (estrella): imagen en el foco. Si al mover el objeto deja de haber imagen: el objeto llegó al foco (salen paralelos).</p>
 <h3>Espejo: otra fórmula y otro signo de $A$</h3>
 <p>$\frac1{s'}+\frac1s=\frac2R=\frac1f$ &nbsp; $f=\frac R2$ &nbsp; $A=-\frac{s'}{s}$ &nbsp; cóncavo $R&lt;0$, convexo $R&gt;0$</p>
 <p>Imagen real: $s'&lt;0$ (delante). Detrás del espejo: virtual ($s'&gt;0$) / objeto virtual ($s&gt;0$).</p>
+<p>Sin cuentas, cóncavo con objeto real: más allá del centro, real, invertida y menor; entre el centro y el foco, real, invertida y mayor; en el foco, no hay imagen; entre el foco y el espejo, virtual, derecha y mayor. Convexo: siempre virtual, derecha y menor.</p>
 <h3>Dos o más elementos</h3>
 <p>La imagen del 1º es el objeto del 2º: $s_2=s_1'-D$, $y_2=y_1'$, $A=A_1A_2\cdots$. Si cae antes del 2º, $s_2&lt;0$; si cae después, $s_2&gt;0$ y esa imagen ya no se forma.</p>
 <div class="box">Salen paralelos: $\frac1{s'}=0$ ⇔ el objeto de ese elemento está en su foco. Divergente: objeto virtual en $s=f=-f'&gt;0$.<br>
@@ -164,6 +168,7 @@ Después del espejo la luz vuelve: tomar $+$ hacia la izquierda para la 2ª pasa
 <h3>Doble rendija (Young)</h3>
 <p class="vars">$d$: separación entre rendijas; $a$: ancho de cada una; $\theta$: ángulo de salida ($\theta=0$ en el centro); $\theta_i$: ángulo de incidencia; $D$: distancia a la pantalla; $y$: posición en la pantalla; $\Delta y$: separación entre franjas; $n$: medio placa–pantalla; $n_i$: medio antes de la placa; $n_l$: índice de la lámina.</p>
 <p>$\Delta CO=n\,d\sen\theta$ &nbsp; máx: $n d\sen\theta=m\lambda_0$ &nbsp; $y=D\tg\theta$ &nbsp; $\theta$ chico: $\Delta y\approx\frac{\lambda_0D}{nd}$</p>
+<p>Interfranja sin cuentas: crece con $\lambda_0$ y con $D$; baja si se sumerge ($n$) o si aumenta $d$. Una lámina corre el patrón pero no cambia $\Delta y$; una red con la misma $d$ deja los máximos en el mismo lugar, más finos.</p>
 <div class="box">Lámina ($e$, $n_l$) en un haz, medio $n$: suma $e(n_l-n)$ a ese haz.<br>
 Corrimiento de $N$ franjas: $|\Sigma e(n_l-n)|=N\lambda_0$; el patrón va hacia la lámina. Gota de aire de diámetro $e'$: suma $e'(1-n)$ (resta).<br>
 Oblicua: el rayo que llega después a su rendija recorre $n_id\sen\theta_i$ de más.<br>
