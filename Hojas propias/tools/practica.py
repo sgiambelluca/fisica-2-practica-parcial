@@ -79,11 +79,11 @@ EJ = [
     ("Geo 6", "Recu 1P 18/6/2024", 2, "Sistema de dos dioptras: R para que los haces salgan paralelos", "r1-2024-1c", 1, 303, 422, FIJO),
     ("Geo 7", "1P 23/4/2022", 4, "Convergente + divergente plano-cóncava: R; f' para que salgan paralelos", "1p-2022-1c", 2, 60, 820, {"fijo": 1, "x0": 20, "x1": 510, "rot": -90}),
     ("Geo 8", "Recu 1P 1C 2022", 2, "Plano-convexa en un tubo que se llena con líquido: R y n", "r1-2022-1c", 1, 212, 387, {**FIJO, **ANCHO}),
-    ("Geo 9", "Recu 7/6/2025", 4, "Telescopio con lente y espejo (resuelto solo en la v7)", "rec-2025-1c", 1, 437, 571, FIJO),
+    ("Geo 9", "Recu 7/6/2025", 4, "Telescopio con lente y espejo", "rec-2025-1c", 1, 437, 571, FIJO),
     ("Geo 10", "1P 24/9/2015", 4, "Rayo en un cubo: n máximo sin reflexión total en la cara lateral", "1p-2015-2c", 1, 645, 750, {}),
 
     ("DR 1", "Intermedio 18/10/2025", 4, "Incidencia oblicua: lámina para centrar el orden 0; después otra lámina y líquido", "int-2025-2c", 1, 464, 625, {}),
-    ("DR 2", "Recu 30/5/2026", 5, "Cinco rendijas con las tres centrales tapadas: I_P/I_max, máximos en la campana", "rec-2026-1c", 1, 571, 719, FIJO),
+    ("DR 2", "Recu 30/5/2026", 5, "Cinco rendijas con las tres centrales tapadas: I_P/I_max, máximos en la campana (resuelto en la v7)", "rec-2026-1c", 1, 571, 719, FIJO),
     ("DR 3", "2P 11/11/2023", 1, "Sumergido, oblicua, lámina + gota de aire: ángulo α e intensidad", "2p-2023-2c", 1, 115, 212, ANCHO400),
     ("DR 4", "2P 2C 2024", 2, "Vidrio + acrílico, 2º máximo en O; se cambia el vidrio: n₃, intensidad, Rayleigh", "2p-2024-2c", 1, 215, 429, {**FIJO, **ANCHO}),
     ("DR 5", "2P 26/6/2023", 1, "Foto del patrón: d y a; lámina que corre el máximo 2: n, intensidad, máximos en la campana", "2p-2023-1c", 1, 250, 548, {**FIJO, "x0": 8, "x1": 585}),
@@ -203,7 +203,7 @@ h2 + .ej {{ break-before: avoid; }}
 p {{ margin: 0 0 2mm; line-height: 1.35; }}
 ul {{ margin: 0 0 2mm; padding-left: 5mm; line-height: 1.35; }}
 table {{ border-collapse: collapse; width: 100%; font-size: 8.4pt; }}
-td, th {{ border: 0.4pt solid #bbb; padding: 0.7mm 1.5mm; text-align: left; vertical-align: top; }}
+td, th {{ border: 0.4pt solid #bbb; padding: 0.45mm 1.5mm; text-align: left; vertical-align: top; }}
 th {{ background: #eee; }}
 tr td:first-child {{ color: var(--c); white-space: nowrap; }}
 .indice {{ break-after: page; }}

@@ -18,7 +18,7 @@ Nombres: `<año> <cuatrimestre> - <examen> (<día-mes>)`; los finales, `<año>-<
 
 ## Frecuencia por tipo de ejercicio
 
-Cada tipo se cuenta una vez por examen. La columna "En la hoja" indica qué ejercicio de `Hojas propias/src/ejercicios-v5.html` (la hoja de 21) lo cubre. La v6 (23 ejercicios) suma la barra con dos caras esféricas (dioptras, ubicación verdadera) y el aumento dado; la v7 (24), además, el telescopio con lente y espejo.
+Cada tipo se cuenta una vez por examen. La columna "En la hoja" indica qué ejercicio de `Hojas propias/src/ejercicios-v5.html` (la hoja de 21) lo cubre. La v6 (23 ejercicios) suma la barra con dos caras esféricas (dioptras, ubicación verdadera) y el aumento dado; la v7 (24), además, N rendijas con las centrales tapadas (19; hasta el 4/11/2026 ese lugar lo tenía el telescopio).
 
 | Tipo | En la hoja | Parciales únicos (7) | 1P y 2P viejos (31) | Finales (19) | Total (57) |
 |---|---|---|---|---|---|
@@ -60,7 +60,7 @@ Cada tipo se cuenta una vez por examen. La columna "En la hoja" indica qué ejer
 | Red: pantalla finita, resolución en algún orden | 18 | 1 | 3 | 1 | 5 |
 | Red: detector roto o corrido | 19 | 1 | 3 | 0 | 4 |
 | Difracción por un hilo o rendija (Babinet) | 21 | 1 | 2 | 3 | 6 |
-| N rendijas con algunas tapadas | nota en la receta | 1 | 1 | 10 | 12 |
+| N rendijas con algunas tapadas | nota en la receta; v7: 19 | 1 | 1 | 10 | 12 |
 | Lámina delgada, cuña, anillos de Newton | 21 | 1 | 1 | 4 | 6 |
 | Doble rendija: datos del patrón o interfranja conceptual | — | 0 | 1 | 4 | 5 |
 | Dos redes: cocientes de N, K y a | — | 0 | 0 | 9 | 9 |
@@ -68,7 +68,7 @@ Cada tipo se cuenta una vez por examen. La columna "En la hoja" indica qué ejer
 ### Qué muestra
 
 - **Cada parcial único trae un ejercicio de cada bloque**: oscilaciones o estacionaria, óptica geométrica (casi siempre reflexión total o lentes), doble rendija y red.
-- **Lo que todavía no cubre la hoja**, contando parciales: sistemas de dioptras o barras (5), aumento dado (3, y 4 finales) y telescopio con lente y espejo (1, y 2 finales). Propagante → estacionaria, convergente + divergente y la reflexión total de un rayo se sumaron en la v5.
+- **Contando solo parciales** (únicos, primeros y segundos; el usuario los pondera por sobre los finales): todo tipo que salió 3 veces o más tiene un ejercicio resuelto en la v6. La v5 no tiene dioptras o barras (5) ni aumento dado (3). Sin ejercicio resuelto quedan tipos de 2 parciales o menos: N rendijas tapadas (2, resuelto solo en la v7), imagen en el mismo lugar (2, nota con cuentas en la v6), MAS con varios resortes (2, el último en 2020), telescopio (1).
 - **Los finales tienen su propio estilo**: dos redes con cocientes, N rendijas tapadas, espejos conceptuales y propagantes conceptuales casi no salen en parciales.
 - **La cátedra recicla ejercicios casi textuales**:
   - Red con detector roto y corrido: 2P 15/6/2019 = parcial 2C 2026.
@@ -82,6 +82,10 @@ Cada tipo se cuenta una vez por examen. La columna "En la hoja" indica qué ejer
   - Lente plano-convexa con imagen del doble y divergente de 5 cm: 2P 2024 1C ≈ parcial 2C 2026 (este, sumergida).
   - Hilo de 30 µm con lente: 2P 2017 = recuperatorio 30/5/2026.
   - Cámara de aceite + gota: 2P 10/11/2018 = recuperatorio 2P 29/6/2022 = intermedio 24/5/2025.
+  - Propagante de 400 m/s, 50 cm, 2 g y 5 nodos: 1P 23/4/2022 = 1P 16/9/2023 (el 1P 20/4/2024 usa la misma cuerda con T = 1 ms).
+  - Cubo de vidrio con reflector y agua (θ ≥ 48°): recuperatorio 1P 1C 2022 = 1P 16/9/2023.
+  - Fijo–fijo de 15 g y 36 N: 1P 1C 2016 = 1P 28/9/2019.
+  - Lente + espejo (objeto a 25 cm, lente de 20 cm, d = 10 cm): 1P 1C 2016 = 1P 28/9/2019.
 
 ## Exámenes, uno por uno
 
