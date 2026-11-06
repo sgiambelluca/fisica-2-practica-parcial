@@ -41,7 +41,26 @@
       bloques.slice(0, mejor.k).forEach((b) => p1.append(b));
       bloques.slice(mejor.k).forEach((b) => p2.append(b));
     }
-    aplicar(paginas, Math.min(...paginas.map(maximo)) * 0.99);
+    // data-por-cara: cada cara con su propio tamaño máximo (la que tiene lugar de sobra lo aprovecha)
+    if (paginas[0].hasAttribute("data-por-cara")) {
+      const fs = paginas.map(maximo);
+      paginas.forEach((p, i) => {
+        // data-buscar: que entre no es monótono con el tamaño (un bloque que salta de columna puede
+        // hacer que 5,78 no entre y 5,85 sí). Se recorre hacia arriba de a 0,01 pt y se toma el mayor
+        // tamaño que entra junto con los dos anteriores (margen para la impresión).
+        if (p.hasAttribute("data-buscar")) {
+          let mejor = fs[i] * 0.99, seguidos = 0;
+          for (let f = Math.floor(fs[i] * 100) / 100; f <= fs[i] * 1.15; f += 0.01) {
+            p.style.setProperty("--fs", f.toFixed(2) + "pt");
+            seguidos = entra(p) ? seguidos + 1 : 0;
+            if (seguidos >= 3) mejor = f - 0.02;
+          }
+          aplicar([p], mejor);
+        } else aplicar([p], fs[i] * 0.99);
+      });
+    } else {
+      aplicar(paginas, Math.min(...paginas.map(maximo)) * 0.99);
+    }
   };
 
   document.addEventListener("DOMContentLoaded", () => {

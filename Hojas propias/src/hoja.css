@@ -54,3 +54,14 @@ td, th { border: 0.3pt solid #999; padding: 0.2mm 0.8mm; vertical-align: middle;
 
 /* Plantilla para calcar */
 body.calco .page { opacity: 0.3; }
+
+/* Tamaños por rol (solo en páginas con class="page jer"): lo que se copia (pasos, resultados,
+   recetas, fracciones) más grande; lo que se lee una vez (descripción, enunciado) más chico.
+   Las fracciones en línea de KaTeX van al 70 %; acá se agrandan y se separan de la raya. */
+.jer .desc { font-size: var(--k-desc, 0.9em); }
+.jer .enun { font-size: var(--k-enun, 0.92em); }
+.jer .chico { font-size: var(--k-chico, 1em); }
+.jer .katex .mfrac .sizing.reset-size6.size3 { font-size: calc(var(--kf, 0.84) * 1em); }
+.jer .katex .mfrac .vlist > span:first-child > .sizing.reset-size6.size3 { position: relative; top: calc((var(--kf, 0.84) - 0.7) * 1.15em); }
+.jer .katex .mfrac .vlist > span:last-child > .sizing.reset-size6.size3 { position: relative; top: calc((var(--kf, 0.84) - 0.7) * -0.7em); }
+.jer .katex .msupsub .sizing.reset-size6.size3 { font-size: var(--k-sub, 0.78em); }

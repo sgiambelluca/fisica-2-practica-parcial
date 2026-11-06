@@ -45,7 +45,7 @@ Cada tipo se cuenta una vez por examen. La columna "En la hoja" indica qué ejer
 | Lente sumergida o llena de líquido | 12 | 1 | 3 | 3 | 7 |
 | Dos imágenes en la pantalla (espejo + lente) | 11 | 1 | 2 | 0 | 3 |
 | Imagen en el mismo lugar del objeto / ubicación verdadera | nota en 10 | 1 | 1 | 0 | 2 |
-| Telescopio con lente y espejo | — | 1 | 0 | 2 | 3 |
+| Telescopio con lente y espejo | v8: 12 | 1 | 0 | 2 | 3 |
 | Reflexión total / Snell: rayo en prisma, cubo o fibra (rango de n o de ángulo) | 9 b) | 0 | 6 | 5 | 11 |
 | Dioptras, barras o sistemas de superficies | — | 0 | 5 | 0 | 5 |
 | Aumento dado: f' (al mover el objeto deja de haber imagen, o espejo con rango de R) | — | 0 | 3 | 4 | 7 |
@@ -63,7 +63,7 @@ Cada tipo se cuenta una vez por examen. La columna "En la hoja" indica qué ejer
 | N rendijas con algunas tapadas | nota en la receta; v7: 19 | 1 | 1 | 10 | 12 |
 | Lámina delgada, cuña, anillos de Newton | 21 | 1 | 1 | 4 | 6 |
 | Doble rendija: datos del patrón o interfranja conceptual | — | 0 | 1 | 4 | 5 |
-| Dos redes: cocientes de N, K y a | — | 0 | 0 | 9 | 9 |
+| Dos redes: cocientes de N, K y a | v8: regla al final | 0 | 0 | 9 | 9 |
 
 ### Qué muestra
 
