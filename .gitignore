@@ -3,3 +3,11 @@
 __pycache__/
 *.pyc
 node_modules/
+
+# videos: el generador va al repo; los MP4 y los temporales, no (pesan cientos de MB)
+Videos/*.mp4
+Videos/_generador/cache/
+Videos/_generador/out/
+Videos/_generador/tmp/
+Videos/*.srt
+Videos/*.pdf
