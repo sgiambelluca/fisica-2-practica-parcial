@@ -63,5 +63,11 @@ body.calco .page { opacity: 0.3; }
 .jer .chico { font-size: var(--k-chico, 1em); }
 .jer .katex .mfrac .sizing.reset-size6.size3 { font-size: calc(var(--kf, 0.84) * 1em); }
 .jer .katex .mfrac .vlist > span:first-child > .sizing.reset-size6.size3 { position: relative; top: calc((var(--kf, 0.84) - 0.7) * 1.15em); }
-.jer .katex .mfrac .vlist > span:last-child > .sizing.reset-size6.size3 { position: relative; top: calc((var(--kf, 0.84) - 0.7) * -0.7em); }
+.jer .katex .mfrac .vlist > span:last-child > .sizing.reset-size6.size3 { position: relative; top: calc((var(--kf, 0.84) - 0.7) * -0.7em - var(--k-num, 0em)); }
 .jer .katex .msupsub .sizing.reset-size6.size3 { font-size: var(--k-sub, 0.78em); }
+/* El corrimiento con top no reserva lugar en el renglón: con fracciones grandes, el numerador de
+   un renglón se pisa con el denominador del de arriba. --k-aire (0 por defecto, para no cambiar
+   la v7 con tamaños ni la v8) agrega aire arriba y abajo solo en los renglones con fracciones. */
+.jer .katex .base:has(.mfrac) { padding: var(--k-aire, 0) 0; }
+/* "Ojo:" de los errores típicos, en rojo */
+.trampa > b:first-child { color: #b3261e; }
